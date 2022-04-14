@@ -1,0 +1,5 @@
+name: Join_quit
+version: '${project.version}'
+main: plugin_join_quit.join_quit.main
+api-version: 1.16
+description: Join und Quit Nachrichten
