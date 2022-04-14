@@ -1,28 +1,34 @@
-package plugin_join_quit.join_quit;
+package join_quit.join_quit_listener;
 
+import join_quit.join_quit_listener.listener.JoinListener;
+import join_quit.join_quit_listener.listener.QuitListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import plugin_join_quit.join_quit.listeners.JoinListener;
 
 public final class main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+
+        listenerRegistration();
 
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+
+
+
     }
 
-    private void listenerRegistration() {
+    public void listenerRegistration() {
 
         PluginManager pluginManager = Bukkit.getPluginManager();
+
         pluginManager.registerEvents(new JoinListener(), this);
 
+        pluginManager.registerEvents(new QuitListener(), this);
     }
 
 }

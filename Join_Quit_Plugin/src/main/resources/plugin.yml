@@ -1,5 +1,5 @@
-name: Join_quit
+name: Join_Quit_Plugin
 version: '${project.version}'
-main: plugin_join_quit.join_quit.main
-api-version: 1.16
-description: Join und Quit Nachrichten
+main: join_quit.join_quit_listener.main
+api-version: 1.18
+description: Join/Quit Chat Messages

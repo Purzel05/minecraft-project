@@ -1,5 +1,6 @@
-package plugin_join_quit.join_quit.listeners;
+package join_quit.join_quit_listener.listener;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -8,10 +9,11 @@ import org.bukkit.event.player.PlayerQuitEvent;
 public class QuitListener implements Listener {
 
     @EventHandler
+
     public void onQuit(PlayerQuitEvent event) {
 
         Player player = event.getPlayer();
-        event.setQuitMessage(player.getName() + "&5 hats erwischt");
+        event.setQuitMessage(ChatColor.RED + player.getName() + ChatColor.DARK_PURPLE + " hat sich verabschieded!");
 
     }
 
