@@ -1,5 +1,11 @@
-name: Join_quit
+name: Lobby_Plugin
 version: '${project.version}'
-main: plugin_join_quit.join_quit.main
-api-version: 1.16
-description: Join und Quit Nachrichten
+main: lobby_plugin.lobby_plugin.main
+api-version: 1.18
+description: Lobby Plugin
+
+commands:
+  start:
+    description: Startet das Spiel
+    default: op
+
