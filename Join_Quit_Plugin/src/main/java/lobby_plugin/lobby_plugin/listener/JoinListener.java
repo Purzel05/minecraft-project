@@ -1,4 +1,4 @@
-package join_quit.join_quit_listener.listener;
+package lobby_plugin.lobby_plugin.listener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

@@ -1,5 +1,5 @@
-name: Join_Quit_Plugin
+name: Lobby_Plugin
 version: '${project.version}'
 main: join_quit.join_quit_listener.main
 api-version: 1.18
-description: Join/Quit Chat Messages
+description: Lobby Plugin

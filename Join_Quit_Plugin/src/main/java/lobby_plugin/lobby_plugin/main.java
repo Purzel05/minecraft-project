@@ -1,7 +1,8 @@
-package join_quit.join_quit_listener;
+package lobby_plugin.lobby_plugin;
 
-import join_quit.join_quit_listener.listener.JoinListener;
-import join_quit.join_quit_listener.listener.QuitListener;
+import lobby_plugin.lobby_plugin.listener.JoinListener;
+import lobby_plugin.lobby_plugin.listener.PlayerDeathListener;
+import lobby_plugin.lobby_plugin.listener.QuitListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -29,6 +30,8 @@ public final class main extends JavaPlugin {
         pluginManager.registerEvents(new JoinListener(), this);
 
         pluginManager.registerEvents(new QuitListener(), this);
+
+        pluginManager.registerEvents(new PlayerDeathListener(), this);
     }
 
 }
