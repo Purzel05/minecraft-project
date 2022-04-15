@@ -14,11 +14,8 @@ public class PlayerDeathListener implements Listener {
 
     public void onDeath(PlayerDeathEvent event) {
 
-        Location spawn = new Location(Bukkit.getWorld("world"),0.5, 0, 0.5);
-
         Player player = event.getEntity().getPlayer();
-        player.teleport(spawn);
-        event.setDeathMessage(ChatColor.GOLD + player.getName() + ChatColor.DARK_RED + " hats erwischt");
+        event.setDeathMessage(ChatColor.GOLD + player.getName() + ChatColor.DARK_RED + " hats erwischt.");
 
     }
 
