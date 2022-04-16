@@ -3,3 +3,12 @@ version: '${project.version}'
 main: lobby_plugin.lobby_plugin.main
 api-version: 1.18
 description: Lobby Plugin
+
+commands:
+  start:
+    description: Startet das Spiel
+    default: op
+
+  end:
+    description: Beendet das Spiel
+    default: op
