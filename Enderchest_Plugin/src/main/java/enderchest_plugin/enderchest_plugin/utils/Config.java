@@ -1,7 +1,6 @@
-package utils;
+package enderchest_plugin.enderchest_plugin.utils;
 
 import org.bukkit.configuration.file.YamlConfiguration;
-
 import java.io.File;
 import java.io.IOException;
 
