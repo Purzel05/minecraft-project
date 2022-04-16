@@ -1,10 +1,8 @@
 package lobby_plugin.lobby_plugin;
 
-import lobby_plugin.lobby_plugin.Commands.EndCommand;
 import lobby_plugin.lobby_plugin.Commands.StartCommand;
 import lobby_plugin.lobby_plugin.listener.*;
 import org.bukkit.Bukkit;
-import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -43,7 +41,6 @@ public final class main extends JavaPlugin {
     public void commandRegistration() {
 
         getCommand("start").setExecutor(new StartCommand());
-        getCommand("end").setExecutor(new EndCommand());
 
     }
 

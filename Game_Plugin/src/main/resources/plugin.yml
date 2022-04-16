@@ -1,0 +1,9 @@
+name: Game_Plugin
+version: '${project.version}'
+main: game.plugin.game_plugin.main
+api-version: 1.18
+description: Plugin für das Minigame
+
+commands:
+  end:
+    description: Beendet das Spiel

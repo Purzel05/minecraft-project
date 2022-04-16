@@ -1,4 +1,4 @@
-package lobby_plugin.lobby_plugin.Commands;
+package game.plugin.game_plugin.Commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -7,19 +7,19 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.Plugin;
 
 public class EndCommand implements CommandExecutor {
-
-
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        Plugin lobbyPlugin = Bukkit.getPluginManager().getPlugin("Lobby_Plugin");
+        Plugin lobby_Plugin = Bukkit.getPluginManager().getPlugin("Lobby_Plugin");
 
-        if(!lobbyPlugin.isEnabled()) {
+        if(!lobby_Plugin.isEnabled()) {
 
-            Bukkit.getPluginManager().enablePlugin(lobbyPlugin);
+            Bukkit.getPluginManager().enablePlugin(lobby_Plugin);
 
             Bukkit.getLogger().fine("Lobby_Plugin wird aktiviert.");
+
         }
+
         return false;
     }
 }

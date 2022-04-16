@@ -9,6 +9,3 @@ commands:
     description: Startet das Spiel
     default: op
 
-  end:
-    description: Beendet das Spiel
-    default: op
