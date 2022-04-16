@@ -1,8 +1,7 @@
 package enderchest_plugin.enderchest_plugin;
 
 import org.bukkit.plugin.java.JavaPlugin;
-import utils.Config;
-import org.bukkit.Bukkit;
+import enderchest_plugin.enderchest_plugin.utils.Config;
 
 public final class main extends JavaPlugin {
 
