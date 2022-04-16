@@ -8,7 +8,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import utils.Config;
-
 import java.io.IOException;
 
 public class EnderchestCommand implements CommandExecutor {
