@@ -20,7 +20,6 @@ public class JoinListener implements Listener {
 
         Location spawn = new Location(Bukkit.getWorld("world"), 0.5, 0, 0.5);
         player.teleport(spawn);
-
     }
 
 }
