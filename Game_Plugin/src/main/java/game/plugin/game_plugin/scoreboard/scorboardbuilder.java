@@ -48,7 +48,7 @@ public abstract class scorboardbuilder {
 
     }
 
-    public void setScore(String content, int i){
+    public void setScore(String content, int score){
 
 
 
