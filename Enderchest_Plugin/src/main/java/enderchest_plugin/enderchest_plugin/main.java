@@ -2,13 +2,14 @@ package enderchest_plugin.enderchest_plugin;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import utils.Config;
+import org.bukkit.Bukkit;
 
 public final class main extends JavaPlugin {
 
     @Override
     public void onEnable() {
       new Config();
-
+       commandRegistration();
     }
 
     @Override

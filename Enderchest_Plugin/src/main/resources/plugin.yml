@@ -3,3 +3,6 @@ version: '${project.version}'
 main: enderchest_plugin.enderchest_plugin.main
 api-version: 1.18
 description: Enderchest
+commands:
+  enderchest:
+    Ruft die Enderchest auf
