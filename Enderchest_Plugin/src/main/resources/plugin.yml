@@ -6,4 +6,3 @@ description: Enderchest
 commands:
   enderchest:
     description: ruft die Enderchest auf
-
