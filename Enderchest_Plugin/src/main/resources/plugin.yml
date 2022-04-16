@@ -5,4 +5,5 @@ api-version: 1.18
 description: Enderchest
 commands:
   enderchest:
-    Ruft die Enderchest auf
+    Enderchest wir aufgerufen
+
