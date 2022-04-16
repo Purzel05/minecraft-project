@@ -24,5 +24,4 @@ public final class main extends JavaPlugin {
         getCommand("end").setExecutor(new EndCommand());
 
     }
-
 }
