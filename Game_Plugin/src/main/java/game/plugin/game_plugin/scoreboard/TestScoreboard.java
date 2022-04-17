@@ -1,6 +1,5 @@
 package game.plugin.game_plugin.scoreboard;
 
-import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
 
 public class TestScoreboard extends scorboardbuilder{
