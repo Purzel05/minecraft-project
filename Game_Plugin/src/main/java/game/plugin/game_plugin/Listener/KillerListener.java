@@ -21,7 +21,7 @@ public class KillerListener implements Listener {
 
                 if (entity instanceof Player) {
                     Player killerPlayer = (Player) entity;
-                    player.sendMessage("§5§l§[Du wurdest von " + killerPlayer.getName() + ("§5§l§[und dem allmächtigem Schleggagott zerquetscht"));
+                    player.sendMessage("§5§l§[Du wurdest von " + killerPlayer.getName() + ("§5§l§[ und dem allmächtigem Schleggagott zerquetscht"));
 
 
                 }
