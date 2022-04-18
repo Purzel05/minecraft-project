@@ -17,7 +17,7 @@ public class PlayerMoveListener implements Listener {
 
             Player player = event.getPlayer();
 
-            if (player.getName().equalsIgnoreCase("Porzl2k5")) {
+            if (player.getName().equalsIgnoreCase("Schleggamann")) {
 
                 player.sendMessage(ChatColor.DARK_RED + "Deez nuts");
 

@@ -12,3 +12,6 @@ commands:
   lobby:
     description: Teleportiert dich zum Spawn
 
+  Xxx:
+    description: xxx
+

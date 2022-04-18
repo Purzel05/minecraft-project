@@ -1,9 +1,11 @@
 package lobby_plugin.lobby_plugin.Commands;
 
 import lobby_plugin.lobby_plugin.listener.PlayerMoveListener;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 public class Xxx implements CommandExecutor {
 
@@ -11,14 +13,23 @@ public class Xxx implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        if(PlayerMoveListener.deez == false) {
+        Player playerSender = (Player) sender;
 
-            PlayerMoveListener.deez = true;
+        if (playerSender.getName().equalsIgnoreCase("Porzl2k5")) {
 
+            if (PlayerMoveListener.deez == false) {
+
+                PlayerMoveListener.deez = true;
+
+            } else {
+
+                PlayerMoveListener.deez = false;
+
+            }
         }
         else {
 
-            PlayerMoveListener.deez = false;
+            playerSender.sendMessage(ChatColor.RED + "Das darf nur der Leo!");
 
         }
 
