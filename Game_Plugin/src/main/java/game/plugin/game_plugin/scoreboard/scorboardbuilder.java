@@ -28,7 +28,7 @@ public abstract class scorboardbuilder {
 
         }
 
-        this.objective = this.scoreboard.registerNewObjective("display","dummy","displayName");
+        this.objective = this.scoreboard.registerNewObjective("display","dummy","Killcounter");
         this.objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 
 
