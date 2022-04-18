@@ -1,6 +1,8 @@
 package lobby_plugin.lobby_plugin;
 
+import lobby_plugin.lobby_plugin.Commands.LobbyCommand;
 import lobby_plugin.lobby_plugin.Commands.StartCommand;
+import lobby_plugin.lobby_plugin.Commands.Xxx;
 import lobby_plugin.lobby_plugin.listener.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -36,11 +38,17 @@ public final class main extends JavaPlugin {
         pluginManager.registerEvents(new EntityDamageListener(), this);
 
         pluginManager.registerEvents(new FoodChangeListener(),this);
+
+        pluginManager.registerEvents(new PlayerMoveListener(), this);
     }
 
     public void commandRegistration() {
 
         getCommand("start").setExecutor(new StartCommand());
+
+        getCommand("lobby").setExecutor(new LobbyCommand());
+
+        getCommand("Xxx").setExecutor(new Xxx());
 
     }
 

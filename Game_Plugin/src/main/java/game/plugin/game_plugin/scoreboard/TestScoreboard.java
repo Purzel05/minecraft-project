@@ -8,9 +8,11 @@ public class TestScoreboard extends scorboardbuilder{
         super(player, "  §5§[Killcounter  ");
     }
 
+
+
     @Override
     public void createScoreboard() {
-     setScore(player.getAddress().getHostName(),0);
+        setScore("Du stinkst",0);
     }
 
 
@@ -18,6 +20,7 @@ public class TestScoreboard extends scorboardbuilder{
 
     @Override
     public void update() {
+
 
     }
 }

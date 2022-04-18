@@ -9,3 +9,6 @@ commands:
     description: Startet das Spiel
     default: op
 
+  lobby:
+    description: Teleportiert dich zum Spawn
+
