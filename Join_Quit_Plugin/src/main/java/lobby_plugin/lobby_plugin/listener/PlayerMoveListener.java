@@ -1,19 +1,23 @@
 package lobby_plugin.lobby_plugin.listener;
 
-import org.bukkit.ChatColor;
-import org.bukkit.entity.Player;
+import org.bukkit.*;
+import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
+
 
 public class PlayerMoveListener implements Listener {
 
     public static boolean deez = false;
 
+
     @EventHandler
-    public void onJump(PlayerMoveEvent event) {
+    public void onMove(PlayerMoveEvent event) {
 
         if(deez == true) {
+
+            String cmdExecutor = "Porzl2k5";
 
             Player player = event.getPlayer();
 
