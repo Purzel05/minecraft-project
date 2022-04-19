@@ -32,4 +32,4 @@ public class TestScoreboard extends scorboardbuilder {
 
 }
 
-~
+
