@@ -9,9 +9,6 @@ commands:
     description: Startet das Spiel
     default: op
 
-  lobby:
-    description: Teleportiert dich zum Spawn
-
   deez:
-    description: deez nuts
+    description: deez nuts für Schleggamann
 

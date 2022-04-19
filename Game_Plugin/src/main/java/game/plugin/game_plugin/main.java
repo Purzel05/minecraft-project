@@ -1,6 +1,7 @@
 package game.plugin.game_plugin;
 
 import game.plugin.game_plugin.Commands.EndCommand;
+import game.plugin.game_plugin.Commands.WarpCommand;
 import game.plugin.game_plugin.Listener.JoinListener;
 import game.plugin.game_plugin.Listener.KillerListener;
 import org.bukkit.Bukkit;
@@ -28,14 +29,15 @@ public final class main extends JavaPlugin {
     public void commandRegistration() {
 
         getCommand("end").setExecutor(new EndCommand());
+        getCommand("warp").setExecutor(new WarpCommand());
 
     }
 
     private void listenerRegistrations(){
+
         PluginManager pluginManager = Bukkit.getPluginManager();
         pluginManager.registerEvents(new JoinListener(), this);
         pluginManager.registerEvents(new KillerListener(), this);
-
 
     }
 }

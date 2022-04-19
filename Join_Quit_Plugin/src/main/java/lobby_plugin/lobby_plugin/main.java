@@ -1,8 +1,7 @@
 package lobby_plugin.lobby_plugin;
 
-import lobby_plugin.lobby_plugin.Commands.LobbyCommand;
-import lobby_plugin.lobby_plugin.Commands.StartCommand;
 import lobby_plugin.lobby_plugin.Commands.DeezCommand;
+import lobby_plugin.lobby_plugin.Commands.StartCommand;
 import lobby_plugin.lobby_plugin.listener.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -45,8 +44,6 @@ public final class main extends JavaPlugin {
     public void commandRegistration() {
 
         getCommand("start").setExecutor(new StartCommand());
-
-        getCommand("lobby").setExecutor(new LobbyCommand());
 
         getCommand("deez").setExecutor(new DeezCommand());
 

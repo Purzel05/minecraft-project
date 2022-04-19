@@ -7,3 +7,6 @@ description: Plugin für das Minigame
 commands:
   end:
     description: Beendet das Spiel
+
+  warp:
+    description: Teleportiert dich zu bestimmten Warppunkt
