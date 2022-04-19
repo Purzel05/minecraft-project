@@ -11,16 +11,12 @@ public class TestScoreboard extends scorboardbuilder {
 
     @Override
     public void createScoreboard() {
-
-        setScore("Leo stinkt",0);
-
-     }
+        setScore( "Leo stinkt",0);
+    }
 
 
     @Override
     public void update() {
-
-        
 
     }
 
