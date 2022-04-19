@@ -26,6 +26,7 @@ public class KillerListener implements Listener {
                     player.sendMessage("§5§l§[Du wurdest von " + killerPlayer.getName() + ("§5§l§[ und dem allmächtigem Schleggagott zerquetscht"));
 
                     TestScoreboard scoreboard = new TestScoreboard(killerPlayer);
+                    scoreboard.countScore();
 
 
                 }
