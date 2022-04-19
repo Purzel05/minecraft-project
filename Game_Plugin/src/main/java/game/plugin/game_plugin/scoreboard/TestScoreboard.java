@@ -2,7 +2,7 @@ package game.plugin.game_plugin.scoreboard;
 import org.bukkit.entity.Player;
 
 public class TestScoreboard extends scorboardbuilder {
-
+    int content = 0;
     public TestScoreboard(Player player) {
 
         super(player, "  §5§[Killcounter  ");
@@ -11,17 +11,19 @@ public class TestScoreboard extends scorboardbuilder {
 
     @Override
     public void createScoreboard() {
-
-        setScore("Leo stinkt",0);
-
+        setScore(0,0);
      }
 
 
     @Override
     public void update() {
-
         
+    }
 
+
+    public void countScore(){
+        this.scoreboard.getScores(String.valueOf(content));
+        this.content = content + 1;
     }
 
 
