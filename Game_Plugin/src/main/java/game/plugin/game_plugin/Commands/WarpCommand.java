@@ -17,6 +17,8 @@ public class WarpCommand implements CommandExecutor {
 
         Location spawn = new Location(Bukkit.getWorld("world"), 0.5, 0, 0.5);
 
+        Location map = new Location(Bukkit.getWorld("world"), -284.5, 49, -10.5);
+
 
         if(args.length == 0) {
 
@@ -27,6 +29,7 @@ public class WarpCommand implements CommandExecutor {
             switch (args[0]) {
 
                 case "spawn": executor.teleport(spawn); break;
+                case "map": executor.teleport(map); break;
                 default: executor.sendMessage(ChatColor.YELLOW + "Ungültiger Warppunkt."); break;
 
             }
