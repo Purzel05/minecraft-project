@@ -14,7 +14,6 @@ public class JoinListener implements Listener {
         Player player = event.getPlayer();
         new TestScoreboard(player);
 
-
     }
 
 }

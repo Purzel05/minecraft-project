@@ -15,22 +15,9 @@ public class TestScoreboard extends scorboardbuilder {
      }
 
 
-
-    @Override
+     @Override
     public void update() {
-
-        
     }
-
-
-    public void countScore(){
-
-        this.content = content + 1;
-        setContent(content);
-
-    }
-
-
 
 }
 
