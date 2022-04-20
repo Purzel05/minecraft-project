@@ -11,7 +11,7 @@ public class TestScoreboard extends scorboardbuilder {
 
     @Override
     public void createScoreboard() {
-        setScore(content,0);
+        setScore(String.valueOf(content),0);
      }
 
 
