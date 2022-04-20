@@ -50,11 +50,15 @@ public abstract class scorboardbuilder {
 
     }
 
-    public void setScore(String content, int score){
-
-
+    public void setScore(int content, int score){
 
         this.objective.getScore(String.valueOf(content)).setScore(score);
+
+    }
+
+    public void setContent(int content) {
+
+        this.scoreboard.getScores(String.valueOf(content));
 
     }
 
