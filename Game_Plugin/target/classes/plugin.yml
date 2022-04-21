@@ -10,3 +10,6 @@ commands:
 
   warp:
     description: Teleportiert dich zu bestimmten Warppunkt
+
+  start:
+    description: Startet das Spiel
