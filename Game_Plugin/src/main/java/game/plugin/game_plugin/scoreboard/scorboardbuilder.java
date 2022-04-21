@@ -15,8 +15,8 @@ public abstract class scorboardbuilder {
         this.player = player;
 
         if(player.getScoreboard().equals(Bukkit.getScoreboardManager().getMainScoreboard())){
-            player.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
 
+            player.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
 
         }
 
@@ -24,6 +24,7 @@ public abstract class scorboardbuilder {
         this.scoreboard = player.getScoreboard();
 
         if(this.scoreboard.getObjective("display")!= null){
+
             this.scoreboard.getObjective("display").unregister();
 
         }
@@ -46,6 +47,7 @@ public abstract class scorboardbuilder {
 
 
     public void setDisplayName(String displayName){
+
         this.objective.setDisplayName(displayName);
 
     }
@@ -56,13 +58,8 @@ public abstract class scorboardbuilder {
 
     }
 
-    public void setContent(int content) {
-
-        this.scoreboard.getScores(String.valueOf(content));
-
-    }
-
     public void removeScore(int content){
+
         this.scoreboard.resetScores(String.valueOf(content));
 
     }
