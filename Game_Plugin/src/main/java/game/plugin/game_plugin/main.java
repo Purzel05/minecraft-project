@@ -1,6 +1,7 @@
 package game.plugin.game_plugin;
 
 import game.plugin.game_plugin.Commands.EndCommand;
+import game.plugin.game_plugin.Commands.StartCommand;
 import game.plugin.game_plugin.Commands.WarpCommand;
 import game.plugin.game_plugin.Listener.JoinListener;
 import game.plugin.game_plugin.Listener.KillerListener;
@@ -30,6 +31,7 @@ public final class main extends JavaPlugin {
 
         getCommand("warp").setExecutor(new WarpCommand());
         getCommand("end").setExecutor(new EndCommand());
+        getCommand("start").setExecutor(new StartCommand());
 
     }
 
