@@ -6,12 +6,12 @@ import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 
-public abstract class scorboardbuilder {
-    protected final Scoreboard scoreboard;
-    protected final Objective objective;
-  protected final Player player;
+public abstract class ScoarboardBuilder {
+    public final Scoreboard scoreboard;
+    public final Objective objective;
+    public final Player player;
 
-    public scorboardbuilder(Player player, String displayName) {
+    public ScoarboardBuilder(Player player, String displayName) {
         this.player = player;
 
         if(player.getScoreboard().equals(Bukkit.getScoreboardManager().getMainScoreboard())){

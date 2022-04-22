@@ -1,7 +1,7 @@
 package game.plugin.game_plugin.scoreboard;
 import org.bukkit.entity.Player;
 
-public class TestScoreboard extends scorboardbuilder {
+public class TestScoreboard extends ScoarboardBuilder {
 
     public TestScoreboard(Player player) {
 
