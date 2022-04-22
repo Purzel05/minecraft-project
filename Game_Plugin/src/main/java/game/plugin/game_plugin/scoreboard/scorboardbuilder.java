@@ -23,13 +23,13 @@ public abstract class scorboardbuilder {
 
         this.scoreboard = player.getScoreboard();
 
-        if(this.scoreboard.getObjective("display")!= null){
+        if(this.scoreboard.getObjective("display") != null){
 
             this.scoreboard.getObjective("display").unregister();
 
         }
 
-        this.objective = this.scoreboard.registerNewObjective("display","dummy","Killcounter");
+        this.objective = this.scoreboard.registerNewObjective(displayName,"dummy","Killcounter");
         this.objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 
 
@@ -52,15 +52,15 @@ public abstract class scorboardbuilder {
 
     }
 
-    public void setScore(int content, int score){
+    public void setScore(String content, int score){
 
-        this.objective.getScore(String.valueOf(content)).setScore(score);
+        this.objective.getScore(content).setScore(score);
 
     }
 
-    public void removeScore(int content){
+    public void removeScore(String content){
 
-        this.scoreboard.resetScores(String.valueOf(content));
+        this.scoreboard.resetScores(content);
 
     }
 

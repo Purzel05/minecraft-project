@@ -11,6 +11,7 @@ public class JoinListener implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
+        
         Player player = event.getPlayer();
         new TestScoreboard(player);
 
