@@ -1,6 +1,6 @@
 name: Lobby_Plugin
 version: '${project.version}'
-main: lobby_plugin.lobby_plugin.main
+main: lobby_plugin.lobby_plugin.Main
 api-version: 1.18
 description: Lobby Plugin
 

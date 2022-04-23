@@ -1,6 +1,6 @@
 name: Game_Plugin
 version: '1.0-SNAPSHOT'
-main: game.plugin.game_plugin.main
+main: game.plugin.game_plugin.Main
 api-version: 1.18
 description: Plugin für das Minigame
 

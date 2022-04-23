@@ -12,6 +12,7 @@ public abstract class ScoarboardBuilder {
     public final Player player;
 
     public ScoarboardBuilder(Player player, String displayName) {
+
         this.player = player;
 
         if(player.getScoreboard().equals(Bukkit.getScoreboardManager().getMainScoreboard())){
@@ -32,19 +33,12 @@ public abstract class ScoarboardBuilder {
         this.objective = this.scoreboard.registerNewObjective(displayName,"dummy","Killcounter");
         this.objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 
-
         createScoreboard();
 
     }
-
     public abstract void createScoreboard();
 
-
-
     public abstract void update();
-
-
-
 
     public void setDisplayName(String displayName){
 

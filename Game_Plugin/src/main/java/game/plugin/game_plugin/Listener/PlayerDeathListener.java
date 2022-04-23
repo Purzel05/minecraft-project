@@ -1,4 +1,4 @@
-package lobby_plugin.lobby_plugin.listener;
+package game.plugin.game_plugin.Listener;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;

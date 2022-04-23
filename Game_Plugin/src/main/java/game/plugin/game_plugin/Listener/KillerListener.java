@@ -1,5 +1,6 @@
 package game.plugin.game_plugin.Listener;
 
+import game.plugin.game_plugin.scoreboard.TestScoreboard;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -9,6 +10,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 
 public class KillerListener implements Listener {
+    int content;
 
     @EventHandler
     public void onPlayerDeath(final EntityDeathEvent event) {
@@ -16,14 +18,21 @@ public class KillerListener implements Listener {
 
             Player player = (Player) event.getEntity();
             EntityDamageEvent deathcause = player.getLastDamageCause();
-            if (deathcause.getCause() == EntityDamageEvent.DamageCause.ENTITY_ATTACK) {
-                Entity entity = (((EntityDamageByEntityEvent) deathcause).getDamager());
 
+            if (deathcause.getCause() == EntityDamageEvent.DamageCause.ENTITY_ATTACK) {
+
+                Entity entity = (((EntityDamageByEntityEvent) deathcause).getDamager());
 
                 if (entity instanceof Player) {
 
                     Player killerPlayer = (Player) entity;
                     player.sendMessage("§5§l§[Du wurdest von " + killerPlayer.getName() + ("§5§l§[ und dem allmächtigem Schleggagott zerquetscht"));
+
+                    this.content = content + 1;
+
+                    TestScoreboard killerScoarboard = new TestScoreboard(killerPlayer);
+
+                    killerScoarboard.setScore(String.valueOf(content), 0);
 
                 }
             }
