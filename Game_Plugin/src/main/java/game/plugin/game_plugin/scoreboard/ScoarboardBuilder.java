@@ -15,7 +15,7 @@ public abstract class ScoarboardBuilder {
 
         this.player = player;
 
-        if(player.getScoreboard().equals(Bukkit.getScoreboardManager().getMainScoreboard())){
+        if (player.getScoreboard().equals(Bukkit.getScoreboardManager().getMainScoreboard())) {
 
             player.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
 
@@ -24,13 +24,13 @@ public abstract class ScoarboardBuilder {
 
         this.scoreboard = player.getScoreboard();
 
-        if(this.scoreboard.getObjective("display") != null){
+        if (this.scoreboard.getObjective("display") != null) {
 
             this.scoreboard.getObjective("display").unregister();
 
         }
 
-        this.objective = this.scoreboard.registerNewObjective(displayName,"dummy","Killcounter");
+        this.objective = this.scoreboard.registerNewObjective(displayName, "dummy", "Killcounter");
         this.objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 
         createScoreboard();
@@ -40,22 +40,22 @@ public abstract class ScoarboardBuilder {
 
     public abstract void update();
 
-    public void setDisplayName(String displayName){
+    public void setDisplayName(String displayName) {
 
         this.objective.setDisplayName(displayName);
 
     }
 
-    public void setScore(String content, int score){
+    public void setScore(String content, int score) {
 
         this.objective.getScore(content).setScore(score);
 
     }
 
-    public void removeScore(String content){
+    public void removeScore(String content) {
 
         this.scoreboard.resetScores(content);
 
     }
 
-}
+    }

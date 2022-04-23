@@ -7,7 +7,6 @@ import game.plugin.game_plugin.Listener.JoinListener;
 import game.plugin.game_plugin.Listener.KillerListener;
 import game.plugin.game_plugin.Listener.PlayerDeathListener;
 import game.plugin.game_plugin.Listener.QuitListener;
-import game.plugin.game_plugin.scoreboard.TestScoreboard;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
