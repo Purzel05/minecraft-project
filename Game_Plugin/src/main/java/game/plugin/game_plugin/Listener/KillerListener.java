@@ -28,11 +28,9 @@ public class KillerListener implements Listener {
                     Player killerPlayer = (Player) entity;
                     player.sendMessage("§5§l§[Du wurdest von " + killerPlayer.getName() + ("§5§l§[ und dem allmächtigem Schleggagott zerquetscht"));
 
-                    this.content = content + 1;
+                    TestScoreboard killerScoarboard = new TestScoreboard(event.getEntity().getKiller());
 
-                    TestScoreboard killerScoarboard = new TestScoreboard(killerPlayer);
-
-                    killerScoarboard.setScore(String.valueOf(content), 0);
+                    killerScoarboard.killUpdate();
 
                 }
             }
