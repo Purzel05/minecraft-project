@@ -1,6 +1,10 @@
 package game.plugin.game_plugin.scoreboard;
 
+import org.bukkit.command.defaults.BukkitCommand;
 import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitRunnable;
+
+import java.nio.Buffer;
 
 public class KillcounterScoreboard extends AbstractScoreboard {
     private int content = 0;
@@ -22,6 +26,9 @@ public class KillcounterScoreboard extends AbstractScoreboard {
     @Override
     public void update() {
 
+    }
+
+    private void run(){
     }
 }
 
