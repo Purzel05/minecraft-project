@@ -6,56 +6,43 @@ import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 
-public abstract class ScoarboardBuilder {
+public abstract class AbstractScoreboard {
     public final Scoreboard scoreboard;
     public final Objective objective;
     public final Player player;
 
-    public ScoarboardBuilder(Player player, String displayName) {
+    public AbstractScoreboard(Player player, String displayName) {
 
         this.player = player;
 
         if (player.getScoreboard().equals(Bukkit.getScoreboardManager().getMainScoreboard())) {
-
             player.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
-
         }
-
 
         this.scoreboard = player.getScoreboard();
 
         if (this.scoreboard.getObjective("display") != null) {
-
             this.scoreboard.getObjective("display").unregister();
-
         }
 
         this.objective = this.scoreboard.registerNewObjective(displayName, "dummy", "Killcounter");
         this.objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 
         createScoreboard();
-
     }
     public abstract void createScoreboard();
 
     public abstract void update();
 
     public void setDisplayName(String displayName) {
-
         this.objective.setDisplayName(displayName);
-
     }
 
     public void setScore(String content, int score) {
-
         this.objective.getScore(content).setScore(score);
-
     }
 
     public void removeScore(String content) {
-
         this.scoreboard.resetScores(content);
-
     }
-
 }

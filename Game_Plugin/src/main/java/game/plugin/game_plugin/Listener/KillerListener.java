@@ -1,6 +1,6 @@
 package game.plugin.game_plugin.Listener;
 
-import game.plugin.game_plugin.scoreboard.TestScoreboard;
+import game.plugin.game_plugin.scoreboard.KillcounterScoreboard;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -16,19 +16,19 @@ public class KillerListener implements Listener {
     public void onPlayerDeath(final EntityDeathEvent event) {
         if (event.getEntity() instanceof Player) {
 
-            Player player = (Player) event.getEntity();
-            EntityDamageEvent deathcause = player.getLastDamageCause();
+            Player killedPlayer = (Player) event.getEntity();
+            EntityDamageEvent deathcause = killedPlayer.getLastDamageCause();
 
             if (deathcause.getCause() == EntityDamageEvent.DamageCause.ENTITY_ATTACK) {
 
-                Entity entity = (((EntityDamageByEntityEvent) deathcause).getDamager());
+                Entity killerEntity = (((EntityDamageByEntityEvent) deathcause).getDamager());
 
-                if (entity instanceof Player) {
+                if (killerEntity instanceof Player) {
 
-                    Player killerPlayer = (Player) entity;
-                    player.sendMessage("§5§l§[Du wurdest von " + killerPlayer.getName() + ("§5§l§[ und dem allmächtigem Schleggagott zerquetscht"));
+                    Player killerPlayer = (Player) killerEntity;
+                    killedPlayer.sendMessage("§5§l§[Du wurdest von " + killerPlayer.getName() + ("§5§l§[ und dem allmächtigem Schleggagott zerquetscht"));
 
-                    TestScoreboard killerScoarboard = new TestScoreboard(event.getEntity().getKiller());
+                    KillcounterScoreboard killerScoarboard = JoinListener.scoreboards.get(killedPlayer.getKiller().getUniqueId());
 
                     killerScoarboard.killUpdate();
 
