@@ -1,5 +1,6 @@
 package game.plugin.game_plugin.Listener;
 
+import game.plugin.game_plugin.Commands.StartCommand;
 import game.plugin.game_plugin.scoreboard.KillcounterScoreboard;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -28,7 +29,7 @@ public class KillerListener implements Listener {
                     Player killerPlayer = (Player) killerEntity;
                     killedPlayer.sendMessage("§5§l§[Du wurdest von " + killerPlayer.getName() + ("§5§l§[ und dem allmächtigem Schleggagott zerquetscht"));
 
-                    KillcounterScoreboard killerScoarboard = JoinListener.scoreboards.get(killedPlayer.getKiller().getUniqueId());
+                    KillcounterScoreboard killerScoarboard = StartCommand.scoreboards.get(killerPlayer.getUniqueId());
 
                     killerScoarboard.killUpdate();
 

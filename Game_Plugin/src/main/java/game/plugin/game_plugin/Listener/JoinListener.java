@@ -16,14 +16,10 @@ import java.util.UUID;
 
 public class JoinListener implements Listener {
 
-    public static Map<UUID, KillcounterScoreboard> scoreboards = new HashMap<>();
-
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
 
         Player player = event.getPlayer();
-
-        scoreboards.put(player.getUniqueId(), new KillcounterScoreboard(player));
 
         player.sendMessage(ChatColor.AQUA + "Sei gegrüßt " + ChatColor.YELLOW + player.getName() + ChatColor.AQUA + "!");
         event.setJoinMessage(ChatColor.BLUE + "Wir grüßen " + ChatColor.GREEN + player.getName() + ChatColor.BLUE + " auf dem Server!");
