@@ -20,6 +20,7 @@ public class KillcounterScoreboard extends AbstractScoreboard {
 
     public void killUpdate() {
         content = content + 1;
+        setScore(String.valueOf(content), 0);
     }
 
     @Override
@@ -31,7 +32,7 @@ public class KillcounterScoreboard extends AbstractScoreboard {
       switch (Kills){
           case 0: setScore(String.valueOf(content), 0);
           break;
-          case 1: setScore(String.valueOf(content),0);
+          case 1: setScore(String.valueOf(content), 0);
           break;
       }
       Kills++;
