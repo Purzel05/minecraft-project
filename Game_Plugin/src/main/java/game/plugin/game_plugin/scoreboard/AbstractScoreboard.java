@@ -110,4 +110,5 @@ public abstract class AbstractScoreboard {
 
     }
 
+    public abstract void run();
 }

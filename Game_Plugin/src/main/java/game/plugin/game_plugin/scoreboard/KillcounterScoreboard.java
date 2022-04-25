@@ -1,16 +1,16 @@
 package game.plugin.game_plugin.scoreboard;
 
-import org.bukkit.command.defaults.BukkitCommand;
 import org.bukkit.entity.Player;
-import org.bukkit.scheduler.BukkitRunnable;
-
-import java.nio.Buffer;
 
 public class KillcounterScoreboard extends AbstractScoreboard {
+    private int socialId;
     private int content = 0;
 
     public KillcounterScoreboard(Player player) {
         super(player, "  §5§[Killcounter  ");
+        socialId = 0;
+
+        run();
     }
 
     @Override
@@ -27,8 +27,19 @@ public class KillcounterScoreboard extends AbstractScoreboard {
     public void update() {
 
     }
+  @Override
+    public void run(){
+      switch (socialId){
+          case 0: setScore(String.valueOf(content), 0);
+              break;
+          case 1: setScore(String.valueOf(content), 0);
+              break;
 
-    private void run(){
+      }
+      socialId++;
+      if(socialId >= 2){
+          socialId = 0;
+      }
     }
 }
 
