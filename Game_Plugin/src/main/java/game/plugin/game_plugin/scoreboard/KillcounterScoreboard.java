@@ -7,7 +7,7 @@ public class KillcounterScoreboard extends AbstractScoreboard {
     private int content = 0;
 
     public KillcounterScoreboard(Player player) {
-        super(player, "  §5§[Killcounter  ");
+        super(player, "  Killcounter  ");
         Kills = 0;
 
         run();

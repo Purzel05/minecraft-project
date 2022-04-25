@@ -26,7 +26,7 @@ public abstract class AbstractScoreboard {
             this.scoreboard.getObjective("display").unregister();
         }
 
-        this.objective = this.scoreboard.registerNewObjective(displayName, "dummy", "Killcounter");
+        this.objective = this.scoreboard.registerNewObjective(displayName, "dummy", "  Killcounter  ");
         this.objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 
         createScoreboard();
