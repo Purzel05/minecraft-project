@@ -35,7 +35,7 @@ public class KillcounterScoreboard extends AbstractScoreboard {
           break;
       }
       Kills++;
-      if(Kills >= 1){
+      if(Kills >= 2){
           Kills = 0;
       }
     }
