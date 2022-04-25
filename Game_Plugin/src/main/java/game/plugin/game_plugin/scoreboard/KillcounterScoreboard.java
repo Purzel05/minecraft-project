@@ -30,13 +30,12 @@ public class KillcounterScoreboard extends AbstractScoreboard {
     public void run(){
       switch (Kills){
           case 0: setScore(String.valueOf(content), 0);
-              break;
-          case 1: setScore(String.valueOf(content), 0);
-              break;
-
+          break;
+          case 1: setScore(String.valueOf(content),0);
+          break;
       }
       Kills++;
-      if(Kills >= 2){
+      if(Kills >= 1){
           Kills = 0;
       }
     }
