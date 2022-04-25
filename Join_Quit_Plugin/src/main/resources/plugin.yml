@@ -12,3 +12,6 @@ commands:
   deez:
     description: deez nuts für Schleggamann
 
+  zevibuild:
+    description: Zevi Buildrechte an/aus
+

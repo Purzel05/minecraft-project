@@ -1,6 +1,7 @@
 package lobby_plugin.lobby_plugin;
 
 import lobby_plugin.lobby_plugin.Commands.DeezCommand;
+import lobby_plugin.lobby_plugin.Commands.ZeviBuildCommand;
 import lobby_plugin.lobby_plugin.listener.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -26,17 +27,18 @@ public final class Main extends JavaPlugin {
     public void listenerRegistration() {
 
         PluginManager pluginManager = Bukkit.getPluginManager();
-
         pluginManager.registerEvents(new EntityDamageListener(), this);
-
         pluginManager.registerEvents(new FoodChangeListener(),this);
-
         pluginManager.registerEvents(new PlayerMoveListener(), this);
+        pluginManager.registerEvents(new BlockBreakListener(), this);
+        pluginManager.registerEvents(new BlockPlaceListener(),this);
+
     }
 
     public void commandRegistration() {
 
         getCommand("deez").setExecutor(new DeezCommand());
+        getCommand("zevibuild").setExecutor(new ZeviBuildCommand());
 
     }
 
