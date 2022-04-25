@@ -18,10 +18,12 @@ public class ZeviBuildCommand implements CommandExecutor {
             if (BlockPlaceListener.zeviCommand == true) {
 
                 BlockPlaceListener.zeviCommand = false;
+                sender.sendMessage(ChatColor.RED + "Zevi baut jetzt nix mehr!");
 
             } else {
 
                 BlockPlaceListener.zeviCommand = true;
+                sender.sendMessage(ChatColor.RED + "Zevi darf wieder bauen!");
 
             }
 

@@ -19,11 +19,13 @@ public class DeezCommand implements CommandExecutor {
                if (PlayerMoveListener.deez == false) {
 
                     PlayerMoveListener.deez = true;
+                    sender.sendMessage(ChatColor.RED + "Schleggamann gets deeez nuts!");
 
                }
                else {
 
                     PlayerMoveListener.deez = false;
+                    sender.sendMessage(ChatColor.RED + "Schleggamann gets no more deeez nuts!");
 
                }
             }
