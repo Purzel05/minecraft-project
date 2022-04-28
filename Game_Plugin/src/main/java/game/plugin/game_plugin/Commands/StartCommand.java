@@ -32,18 +32,18 @@ public class StartCommand implements CommandExecutor {
 
         Timer timer = new Timer();
 
-        timer.scheduleAtFixedRate(new TimerTask() {
-            int time = 0;
-            @Override
-            public void run() {
-                time++;
-                Bukkit.broadcastMessage(ChatColor.AQUA + String.valueOf(time));
+            timer.scheduleAtFixedRate(new TimerTask() {
+                int time = 0;
+                @Override
+                public void run() {
+                    time++;
+                    Bukkit.broadcastMessage(ChatColor.AQUA + String.valueOf(time));
 
-                if(time == 10) {
-                    timer.cancel();
+                    if (time == 10) {
+                        timer.cancel();
+                    }
                 }
-            }
-        },1000, 1000);
+            }, 1000, 1000);
 
         Location loc1 = new Location(Bukkit.getWorld("world"), -341.5, 9, -23.5);
         Location loc2 = new Location(Bukkit.getWorld("world"), -374.5, 11, -31.5);
