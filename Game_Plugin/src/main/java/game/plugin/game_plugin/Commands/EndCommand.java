@@ -17,11 +17,8 @@ public class EndCommand implements CommandExecutor {
         Plugin lobby_Plugin = Bukkit.getPluginManager().getPlugin("Lobby_Plugin");
 
         if(!lobby_Plugin.isEnabled()) {
-
             Bukkit.getPluginManager().enablePlugin(lobby_Plugin);
-
             Bukkit.getLogger().fine("Lobby_Plugin wird aktiviert.");
-
         }
 
         return false;
