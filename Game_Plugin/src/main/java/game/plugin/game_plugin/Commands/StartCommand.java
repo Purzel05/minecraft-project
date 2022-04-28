@@ -2,6 +2,7 @@ package game.plugin.game_plugin.Commands;
 
 import game.plugin.game_plugin.scoreboard.KillcounterScoreboard;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -9,9 +10,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 public class StartCommand implements CommandExecutor {
 
@@ -23,17 +22,28 @@ public class StartCommand implements CommandExecutor {
         Plugin lobby_Plugin = Bukkit.getPluginManager().getPlugin("Lobby_Plugin");
 
             if(lobby_Plugin.isEnabled()) {
-
                 Bukkit.getPluginManager().disablePlugin(lobby_Plugin);
                 Bukkit.getLogger().fine("Lobby_Plugin wird deaktiviert.");
-
             }
 
         for(Player p : Bukkit.getOnlinePlayers()) {
-
             scoreboards.put(p.getUniqueId(), new KillcounterScoreboard(p));
-
         }
+
+        Timer timer = new Timer();
+
+        timer.scheduleAtFixedRate(new TimerTask() {
+            int time = 0;
+            @Override
+            public void run() {
+                time++;
+                Bukkit.broadcastMessage(ChatColor.AQUA + String.valueOf(time));
+
+                if(time == 10) {
+                    timer.cancel();
+                }
+            }
+        },1000, 1000);
 
         Location loc1 = new Location(Bukkit.getWorld("world"), -341.5, 9, -23.5);
         Location loc2 = new Location(Bukkit.getWorld("world"), -374.5, 11, -31.5);
