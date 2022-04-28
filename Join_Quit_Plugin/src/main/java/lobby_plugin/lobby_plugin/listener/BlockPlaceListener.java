@@ -17,7 +17,7 @@ public class BlockPlaceListener implements Listener {
 
         if(zeviCommand == false) {
 
-            if (player.getName() == "The_Maximalus") {
+            if (player.getName().equalsIgnoreCase("The_Maximalus")) {
 
                 event.setCancelled(true);
 

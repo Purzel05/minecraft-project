@@ -13,7 +13,7 @@ public class ZeviBuildCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        if(sender.getName() != "The_Maximalus") {
+        if(!sender.getName().equalsIgnoreCase("The_Maximalus")) {
 
             if (BlockPlaceListener.zeviCommand == true) {
 
