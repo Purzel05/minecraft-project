@@ -1,7 +1,6 @@
 package lobby_plugin.lobby_plugin;
 
 import lobby_plugin.lobby_plugin.Commands.DeezCommand;
-import lobby_plugin.lobby_plugin.Commands.StartCommand;
 import lobby_plugin.lobby_plugin.Commands.ZeviBuildCommand;
 import lobby_plugin.lobby_plugin.listener.*;
 import org.bukkit.Bukkit;
@@ -40,7 +39,6 @@ public final class Main extends JavaPlugin {
 
         getCommand("deez").setExecutor(new DeezCommand());
         getCommand("zevibuild").setExecutor(new ZeviBuildCommand());
-        getCommand("start").setExecutor(new StartCommand());
 
     }
 

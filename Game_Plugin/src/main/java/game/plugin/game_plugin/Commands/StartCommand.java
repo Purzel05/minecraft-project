@@ -20,16 +20,11 @@ public class StartCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         Plugin lobby_Plugin = Bukkit.getPluginManager().getPlugin("Lobby_Plugin");
-        Plugin game_Plugin = Bukkit.getPluginManager().getPlugin("Game_Plugin");
 
             if(lobby_Plugin.isEnabled()) {
                 Bukkit.getPluginManager().disablePlugin(lobby_Plugin);
                 Bukkit.getLogger().fine("Lobby_Plugin wird deaktiviert.");
-
-                if(!game_Plugin.isEnabled()) {
-                    Bukkit.getPluginManager().enablePlugin(game_Plugin);
-                    Bukkit.getLogger().fine("Game_Plugin wird aktiviert");
-                }
+                sender.sendMessage(ChatColor.DARK_PURPLE + "Lobby_Plugin wird deaktiviert!");
             }
 
         for(Player p : Bukkit.getOnlinePlayers()) {
