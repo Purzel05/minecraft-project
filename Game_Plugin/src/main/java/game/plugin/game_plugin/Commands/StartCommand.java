@@ -34,14 +34,16 @@ public class StartCommand implements CommandExecutor {
         Timer timer = new Timer();
 
             timer.scheduleAtFixedRate(new TimerTask() {
-                int time = 0;
+                int time = 10;
                 @Override
                 public void run() {
-                    time++;
+                    time--;
                     Bukkit.broadcastMessage(ChatColor.AQUA + String.valueOf(time));
 
-                    if (time == 10) {
+                    if (time == 1) {
                         timer.cancel();
+                        Bukkit.broadcastMessage(ChatColor.RED + "Start");
+                        time = 10;
                     }
                 }
             }, 1000, 1000);
