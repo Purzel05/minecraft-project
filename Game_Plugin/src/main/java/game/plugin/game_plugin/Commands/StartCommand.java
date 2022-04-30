@@ -53,6 +53,21 @@ public class StartCommand implements CommandExecutor {
         Location loc5 = new Location(Bukkit.getWorld("world"), -333.5, 12, 20.5);
         Location loc6 = new Location(Bukkit.getWorld("world"), -318.5, 14, -0.5);
 
+        Player[] players = new Player[6];
+        int num = 0;
+
+        for(Player p : Bukkit.getOnlinePlayers()) {
+            players[num] = p;
+            num++;
+        }
+
+        players[0].teleport(loc1);
+        players[1].teleport(loc2);
+        players[2].teleport(loc3);
+        players[3].teleport(loc4);
+        players[4].teleport(loc5);
+        players[5].teleport(loc6);
+
         return false;
     }
 }
