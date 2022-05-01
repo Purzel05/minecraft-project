@@ -34,7 +34,7 @@ public class StartCommand implements CommandExecutor {
         Timer timer = new Timer();
 
             timer.scheduleAtFixedRate(new TimerTask() {
-                int time = 10;
+                int time = 11;
                 @Override
                 public void run() {
                     time--;
@@ -43,7 +43,7 @@ public class StartCommand implements CommandExecutor {
                     if (time == 1) {
                         timer.cancel();
                         Bukkit.broadcastMessage(ChatColor.RED + "Start");
-                        time = 10;
+                        time = 11;
                     }
                 }
             }, 1000, 1000);
