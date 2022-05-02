@@ -1,13 +1,13 @@
 package game.plugin.game_plugin.Commands;
 
 import game.plugin.game_plugin.scoreboard.KillcounterScoreboard;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Location;
+import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
 import java.util.*;
@@ -28,7 +28,9 @@ public class StartCommand implements CommandExecutor {
             }
 
         for(Player p : Bukkit.getOnlinePlayers()) {
-            scoreboards.put(p.getUniqueId(), new KillcounterScoreboard(p));
+            if(p.getScoreboard() == null) {
+                scoreboards.put(p.getUniqueId(), new KillcounterScoreboard(p));
+            }
         }
 
         Timer timer = new Timer();
@@ -55,21 +57,33 @@ public class StartCommand implements CommandExecutor {
         Location loc5 = new Location(Bukkit.getWorld("world"), -333.5, 12, 20.5);
         Location loc6 = new Location(Bukkit.getWorld("world"), -318.5, 14, -0.5);
 
-        Player[] players = new Player[6];
+        ItemStack[] armor = new ItemStack[4];
+        armor[0] = new ItemStack(Material.IRON_BOOTS,1);
+        armor[1] = new ItemStack(Material.IRON_LEGGINGS,1);
+        armor[2] = new ItemStack(Material.IRON_CHESTPLATE, 1);
+        armor[3] = new ItemStack(Material.IRON_HELMET,1);
+
+        ItemStack mainWeapon = new ItemStack(Material.IRON_SWORD,1);
+
+        Location[] spawnLocations = new Location[6];
+        spawnLocations[0] = loc1;
+        spawnLocations[1] = loc2;
+        spawnLocations[2] = loc3;
+        spawnLocations[3] = loc4;
+        spawnLocations[4] = loc5;
+        spawnLocations[5] = loc6;
+
+        Player[] players = new Player[Bukkit.getOnlinePlayers().size()];
         int num = 0;
 
         for(Player p : Bukkit.getOnlinePlayers()) {
             players[num] = p;
+            players[num].teleport(spawnLocations[num]);
+            players[num].getInventory().setArmorContents(armor);
+            players[num].getInventory().setItem(0,mainWeapon);
+            players[num].setGameMode(GameMode.SURVIVAL);
             num++;
         }
-
-        players[0].teleport(loc1);
-        players[1].teleport(loc2);
-        players[2].teleport(loc3);
-        players[3].teleport(loc4);
-        players[4].teleport(loc5);
-        players[5].teleport(loc6);
-
         return false;
     }
 }
