@@ -12,7 +12,7 @@ import org.bukkit.plugin.Plugin;
 
 import java.util.*;
 
-public class StartCommand implements CommandExecutor {
+public class StartCommand implements CommandExecutor{
 
     public static Map<UUID, KillcounterScoreboard> scoreboards = new HashMap<>();
 
@@ -64,6 +64,8 @@ public class StartCommand implements CommandExecutor {
         armor[3] = new ItemStack(Material.IRON_HELMET,1);
 
         ItemStack mainWeapon = new ItemStack(Material.IRON_SWORD,1);
+        ItemStack Bow = new ItemStack(Material.BOW, 1);
+        ItemStack Arrows = new ItemStack(Material.ARROW, 32);
 
         Location[] spawnLocations = new Location[6];
         spawnLocations[0] = loc1;
@@ -81,6 +83,8 @@ public class StartCommand implements CommandExecutor {
             players[num].teleport(spawnLocations[num]);
             players[num].getInventory().setArmorContents(armor);
             players[num].getInventory().setItem(0,mainWeapon);
+            players[num].getInventory().setItem(1,Bow);
+            players[num].getInventory().setItem(20,Arrows);
             players[num].setGameMode(GameMode.SURVIVAL);
             num++;
         }
