@@ -22,7 +22,7 @@ public class StartCommand implements CommandExecutor{
         Plugin lobby_Plugin = Bukkit.getPluginManager().getPlugin("Lobby_Plugin");
 
             if(lobby_Plugin.isEnabled()) {
-                Bukkit.getPluginManager().enablePlugin(lobby_Plugin);
+                Bukkit.getPluginManager().disablePlugin(lobby_Plugin);
                 Bukkit.getLogger().fine("Lobby_Plugin wird deaktiviert.");
                 sender.sendMessage(ChatColor.DARK_PURPLE + "Lobby_Plugin wird deaktiviert!");
             }
