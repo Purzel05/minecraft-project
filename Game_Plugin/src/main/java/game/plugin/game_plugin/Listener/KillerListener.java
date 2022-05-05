@@ -37,7 +37,8 @@ public class KillerListener implements Listener {
 
                     killerScoarboard.killUpdate();
 
-                    Location spawnAgainLocation;
+                    Location spawnAgainLocation = new Location(Bukkit.getWorld("world"), -353.5, 9, -1.5);
+                    killedPlayer.teleport(spawnAgainLocation);
                 }
             }
 
