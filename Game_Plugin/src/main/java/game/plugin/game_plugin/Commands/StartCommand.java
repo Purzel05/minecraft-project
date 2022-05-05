@@ -65,7 +65,7 @@ public class StartCommand implements CommandExecutor{
 
         ItemStack mainWeapon = new ItemStack(Material.IRON_SWORD,1);
         ItemStack Bow = new ItemStack(Material.BOW, 1);
-        ItemStack Arrows = new ItemStack(Material.ARROW, 32);
+        ItemStack Arrows = new ItemStack(Material.ARROW,32);
 
         Location[] spawnLocations = new Location[6];
         spawnLocations[0] = loc1;
