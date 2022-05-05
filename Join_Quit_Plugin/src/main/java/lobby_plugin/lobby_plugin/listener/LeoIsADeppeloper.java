@@ -1,6 +1,5 @@
 package lobby_plugin.lobby_plugin.listener;
 
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -18,11 +17,13 @@ public class LeoIsADeppeloper implements Listener{
 
         List <String> blocked = new ArrayList<String>();
         blocked.add("Schleggamann stinkt");
-        blocked.add("Emmanuel stinkt");
         blocked.add("Du stinkst");
-        blocked.add("Emmanuel ist ein Lauch");
         blocked.add("Schleggamann ist ein Lauch");
         blocked.add("Du bist ein Lauch");
+        blocked.add("Schlägermann");
+        blocked.add("Schleckkamann");
+        blocked.add("Schleckkermann");
+        blocked.add("Schlegarmann");
 
 
         for (String block : blocked){
@@ -37,21 +38,21 @@ public class LeoIsADeppeloper implements Listener{
             }
 
         }
-
-        if (message.contains("Emmanuel")){
-            event.setMessage("Der beste Developer");
+        String Emmanuel = "Emmanuel";
+        if (message.contains(Emmanuel)){
+            String replace = "";
+            replace = replace + "Der beste Developer";
+            String newMessage = message.replace(Emmanuel,replace);
+            event.setMessage(newMessage);
 
         }
-        if(message.contains("Leo" )){
-            event.setMessage("Der Deppeloper");
+        String Leo = "Leo";
+        if(message.contains(Leo)){
+            String replace = "";
+            replace = replace + "Der Deppeloper";
+            String newMessage = message.replace(Leo,replace);
+            event.setMessage(newMessage);
         }
 
           }
-
-
-
-
-
-
-
 }
