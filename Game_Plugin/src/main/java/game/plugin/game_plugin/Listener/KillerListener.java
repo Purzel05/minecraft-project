@@ -4,6 +4,7 @@ import game.plugin.game_plugin.Commands.StartCommand;
 import game.plugin.game_plugin.scoreboard.KillcounterScoreboard;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -36,6 +37,7 @@ public class KillerListener implements Listener {
 
                     killerScoarboard.killUpdate();
 
+                    Location spawnAgainLocation;
                 }
             }
 

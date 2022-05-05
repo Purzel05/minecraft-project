@@ -1,17 +1,15 @@
 package game.plugin.game_plugin.Commands;
 
-import game.plugin.game_plugin.Listener.JoinListener;
-import game.plugin.game_plugin.scoreboard.KillcounterScoreboard;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.GameMode;
-import org.bukkit.Location;
+import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.scoreboard.Scoreboard;
+
+import java.util.List;
 
 public class EndCommand implements CommandExecutor {
 
@@ -28,12 +26,19 @@ public class EndCommand implements CommandExecutor {
 
         Location spawn = new Location(Bukkit.getWorld("world"), 0.5, 0, 0.5);
 
-        for(Player p : Bukkit.getOnlinePlayers()) {
+        World world = Bukkit.getWorld("world");
+        List<Entity> entityList = world.getEntities();
 
+        for(Entity i : entityList) {
+            if(i.getType() == EntityType.DROPPED_ITEM) {
+                i.remove();
+            }
+        }
+
+        for(Player p : Bukkit.getOnlinePlayers()) {
             p.setGameMode(GameMode.SURVIVAL);
             p.teleport(spawn);
             p.getInventory().clear();
-
         }
 
         return false;
