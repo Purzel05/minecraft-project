@@ -19,7 +19,6 @@ public final class Main extends JavaPlugin {
         commandRegistration();
         listenerRegistrations();
 
-
     }
 
     @Override
