@@ -3,10 +3,7 @@ package game.plugin.game_plugin;
 import game.plugin.game_plugin.Commands.EndCommand;
 import game.plugin.game_plugin.Commands.StartCommand;
 import game.plugin.game_plugin.Commands.WarpCommand;
-import game.plugin.game_plugin.Listener.JoinListener;
-import game.plugin.game_plugin.Listener.KillerListener;
-import game.plugin.game_plugin.Listener.PlayerDeathListener;
-import game.plugin.game_plugin.Listener.QuitListener;
+import game.plugin.game_plugin.Listener.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -44,6 +41,7 @@ public final class Main extends JavaPlugin {
         pluginManager.registerEvents(new KillerListener(), this);
         pluginManager.registerEvents(new QuitListener(),this);
         pluginManager.registerEvents(new PlayerDeathListener(),this);
+        pluginManager.registerEvents(new RespawnListener(), this);
 
     }
 }

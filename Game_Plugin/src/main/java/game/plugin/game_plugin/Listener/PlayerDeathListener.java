@@ -20,7 +20,5 @@ public class PlayerDeathListener implements Listener {
                 p.sendMessage(ChatColor.GOLD + event.getEntity().getPlayer().getName() + ChatColor.DARK_RED + " hats erwischt");
             }
         }
-
     }
-
 }

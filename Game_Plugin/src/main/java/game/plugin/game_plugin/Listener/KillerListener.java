@@ -30,14 +30,11 @@ public class KillerListener implements Listener {
                     Player killerPlayer = (Player) killerEntity;
                     killedPlayer.sendMessage("§5§l§[Du wurdest von " + killerPlayer.getName() + ("§5§l§[ und dem allmächtigem Schleggagott zerquetscht"));
 
-                    KillcounterScoreboard killerScoarboard = StartCommand.scoreboards.get(killerPlayer.getUniqueId());
+                    KillcounterScoreboard killerScoreboard = StartCommand.scoreboards.get(killerPlayer.getUniqueId());
 
-                    killerScoarboard.killUpdate();
+                    killerScoreboard.killUpdate();
 
-                    Location spawnAgainLocation = new Location(Bukkit.getWorld("world"), -353.5, 9, -1.5);
-                    killedPlayer.teleport(spawnAgainLocation);
-
-                    if(killerScoarboard.getContent() == 10) {
+                    if(killerScoreboard.getContent() == 10) {
                         Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "end");
                     }
                 }

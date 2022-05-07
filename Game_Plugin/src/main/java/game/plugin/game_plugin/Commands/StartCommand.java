@@ -27,9 +27,7 @@ public class StartCommand implements CommandExecutor{
             }
 
         for(Player p : Bukkit.getOnlinePlayers()) {
-            if(p.getScoreboard() == null) {
                 scoreboards.put(p.getUniqueId(), new KillcounterScoreboard(p));
-            }
         }
 
         Timer timer = new Timer();
@@ -65,6 +63,7 @@ public class StartCommand implements CommandExecutor{
         ItemStack mainWeapon = new ItemStack(Material.IRON_SWORD,1);
         ItemStack Bow = new ItemStack(Material.BOW, 1);
         ItemStack Arrows = new ItemStack(Material.ARROW,32);
+        ItemStack Steaks = new ItemStack(Material.COOKED_BEEF, 32);
 
         Location[] spawnLocations = new Location[6];
         spawnLocations[0] = loc1;
@@ -79,11 +78,13 @@ public class StartCommand implements CommandExecutor{
 
         for(Player p : Bukkit.getOnlinePlayers()) {
             players[num] = p;
+            players[num].getInventory().clear();
             players[num].teleport(spawnLocations[num]);
             players[num].getInventory().setArmorContents(armor);
             players[num].getInventory().setItem(0,mainWeapon);
             players[num].getInventory().setItem(1,Bow);
             players[num].getInventory().setItem(20,Arrows);
+            players[num].getInventory().setItem(3, Steaks);
             players[num].setGameMode(GameMode.SURVIVAL);
             num++;
         }
