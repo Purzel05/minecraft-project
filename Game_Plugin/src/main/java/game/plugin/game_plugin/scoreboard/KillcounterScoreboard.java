@@ -40,6 +40,11 @@ public class KillcounterScoreboard extends AbstractScoreboard {
           Kills = 0;
       }
     }
+    public int getContent() {
+
+        return content;
+
+    }
 }
 
 

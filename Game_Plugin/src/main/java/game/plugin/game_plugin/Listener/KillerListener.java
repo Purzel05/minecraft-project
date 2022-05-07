@@ -36,6 +36,10 @@ public class KillerListener implements Listener {
 
                     Location spawnAgainLocation = new Location(Bukkit.getWorld("world"), -353.5, 9, -1.5);
                     killedPlayer.teleport(spawnAgainLocation);
+
+                    if(killerScoarboard.getContent() == 10) {
+                        Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "end");
+                    }
                 }
             }
 
