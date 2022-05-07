@@ -8,7 +8,7 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LeoIsADeppeloper implements Listener{
+public class LeoIsADeppeloperListener implements Listener{
     @EventHandler
     public void zensur (AsyncPlayerChatEvent event) {
 
