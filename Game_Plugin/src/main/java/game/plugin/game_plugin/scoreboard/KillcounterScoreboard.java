@@ -41,9 +41,11 @@ public class KillcounterScoreboard extends AbstractScoreboard {
       }
     }
     public int getContent() {
-
         return content;
+    }
 
+    public void setContent(int content) {
+        this.content = content;
     }
 }
 

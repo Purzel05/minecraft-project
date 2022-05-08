@@ -88,6 +88,7 @@ public class StartCommand implements CommandExecutor{
             players[num].setGameMode(GameMode.SURVIVAL);
             num++;
         }
+
         return false;
     }
 }

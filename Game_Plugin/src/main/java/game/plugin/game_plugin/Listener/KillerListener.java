@@ -3,7 +3,6 @@ package game.plugin.game_plugin.Listener;
 import game.plugin.game_plugin.Commands.StartCommand;
 import game.plugin.game_plugin.scoreboard.KillcounterScoreboard;
 import org.bukkit.Bukkit;
-import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
