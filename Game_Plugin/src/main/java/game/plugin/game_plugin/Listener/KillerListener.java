@@ -3,6 +3,7 @@ package game.plugin.game_plugin.Listener;
 import game.plugin.game_plugin.Commands.StartCommand;
 import game.plugin.game_plugin.scoreboard.KillcounterScoreboard;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -11,10 +12,12 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 
+import java.net.InetSocketAddress;
+
 public class KillerListener implements Listener {
 
     @EventHandler
-    public void onPlayerDeath(final EntityDeathEvent event) {
+    public void onPlayerDeath( EntityDeathEvent event) {
         if (event.getEntity() instanceof Player) {
 
             Player killedPlayer = (Player) event.getEntity();
@@ -36,6 +39,7 @@ public class KillerListener implements Listener {
                     if(killerScoreboard.getContent() == 10) {
                         Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "end");
                     }
+
                 }
             }
 
