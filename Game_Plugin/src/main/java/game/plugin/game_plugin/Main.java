@@ -42,6 +42,6 @@ public final class Main extends JavaPlugin {
         pluginManager.registerEvents(new QuitListener(),this);
         pluginManager.registerEvents(new PlayerDeathListener(),this);
         pluginManager.registerEvents(new RespawnListener(),this);
-        
+
     }
 }
