@@ -1,11 +1,13 @@
 package game.plugin.game_plugin.Commands;
 
+import game.plugin.game_plugin.Listener.PlayerMoveListener;
 import game.plugin.game_plugin.scoreboard.KillcounterScoreboard;
 import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
@@ -26,6 +28,8 @@ public class StartCommand implements CommandExecutor{
                 sender.sendMessage(ChatColor.DARK_PURPLE + "Lobby_Plugin wird deaktiviert!");
             }
 
+            PlayerMoveListener.control = true;
+
         for(Player p : Bukkit.getOnlinePlayers()) {
                 scoreboards.put(p.getUniqueId(), new KillcounterScoreboard(p));
         }
@@ -42,10 +46,13 @@ public class StartCommand implements CommandExecutor{
                     if (time == 1) {
                         timer.cancel();
                         Bukkit.broadcastMessage(ChatColor.RED + "Start");
+                        PlayerMoveListener.control = false;
                         time = 11;
                     }
                 }
             }, 1000, 1000);
+
+
 
         Location loc1 = new Location(Bukkit.getWorld("world"), -341.5, 9, -23.5);
         Location loc2 = new Location(Bukkit.getWorld("world"), -374.5, 11, -31.5);
