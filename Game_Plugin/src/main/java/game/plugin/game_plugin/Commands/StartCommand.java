@@ -84,7 +84,7 @@ public class StartCommand implements CommandExecutor{
             players[num].getInventory().setItem(0,mainWeapon);
             players[num].getInventory().setItem(1,Bow);
             players[num].getInventory().setItem(20,Arrows);
-            players[num].getInventory().setItem(3, Steaks);
+            players[num].getInventory().setItem(2, Steaks);
             players[num].setGameMode(GameMode.SURVIVAL);
             num++;
         }
