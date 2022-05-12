@@ -41,6 +41,7 @@ public class EndCommand implements CommandExecutor {
             p.teleport(spawn);
             p.getInventory().clear();
             p.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
+            p.setHealth(10);
         }
 
         return false;

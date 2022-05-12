@@ -21,6 +21,7 @@ public class RespawnListener implements Listener {
         Player player = event.getPlayer();
         Location respawnLocation = new Location(Bukkit.getWorld("world"), -392.5, 16, -13.5);
         player.teleport(respawnLocation);
+        player.setHealth(10);
     }
 
     public void onDeath(PlayerDeathEvent event){
