@@ -25,7 +25,6 @@ public class LeoIsADeppeloperListener implements Listener{
         blocked.add("Schleckkermann");
         blocked.add("Schlegarmann");
 
-
         for (String block : blocked){
             if(message.contains(block)){
                 String replace = "";
@@ -36,16 +35,16 @@ public class LeoIsADeppeloperListener implements Listener{
                 event.setMessage(newMessage);
                 player.sendMessage("Sowas solltest du nicht mehr über den tollen Schleggamann sagen");
             }
-
         }
+
         String Emmanuel = "Emmanuel";
         if (message.contains(Emmanuel)){
             String replace = "";
             replace = replace + "Der beste Developer";
             String newMessage = message.replace(Emmanuel,replace);
             event.setMessage(newMessage);
-
         }
+
         String Leo = "Leo";
         if(message.contains(Leo)){
             String replace = "";
@@ -53,6 +52,5 @@ public class LeoIsADeppeloperListener implements Listener{
             String newMessage = message.replace(Leo,replace);
             event.setMessage(newMessage);
         }
-
-          }
+    }
 }

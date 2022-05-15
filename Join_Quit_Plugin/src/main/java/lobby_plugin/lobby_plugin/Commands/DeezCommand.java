@@ -15,24 +15,17 @@ public class DeezCommand implements CommandExecutor {
         Player playerSender = (Player) sender;
 
         if (playerSender.getName().equalsIgnoreCase("Porzl2k5")) {
-
                if (PlayerMoveListener.deez == false) {
-
                     PlayerMoveListener.deez = true;
                     sender.sendMessage(ChatColor.RED + "Schleggamann gets deeez nuts!");
-
                }
                else {
-
                     PlayerMoveListener.deez = false;
                     sender.sendMessage(ChatColor.RED + "Schleggamann gets no more deeez nuts!");
-
                }
             }
             else {
-
                 playerSender.sendMessage(ChatColor.RED + "Das darf nur der Leo!");
-
             }
 
             return false;

@@ -14,17 +14,10 @@ public class BlockBreakListener implements Listener {
     public void onBlockBreak(BlockBreakEvent event) {
 
         Player player = event.getPlayer();
-
         if(zeviCommand2 == false) {
-
             if (player.getName().equalsIgnoreCase("The_Maximalus")) {
-
                 event.setCancelled(true);
-
             }
-
         }
-
     }
-
 }
