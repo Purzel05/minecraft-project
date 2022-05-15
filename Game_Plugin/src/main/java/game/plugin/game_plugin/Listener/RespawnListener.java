@@ -28,14 +28,12 @@ public class RespawnListener implements Listener {
         Player player = event.getEntity();
         Bukkit.getScheduler().runTaskLater(this.plugin, new Runnable() {
 
+
             @Override
             public void run() {
-             
+
             }
-        },20);
-
-
-    }
+        }
 
 }
 
