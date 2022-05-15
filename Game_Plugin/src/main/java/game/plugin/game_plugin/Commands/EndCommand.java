@@ -40,8 +40,9 @@ public class EndCommand implements CommandExecutor {
             p.setGameMode(GameMode.SURVIVAL);
             p.teleport(spawn);
             p.getInventory().clear();
-            p.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
-            p.setHealth(10);
+            p.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
+            p.setHealth(20);
+            p.setFoodLevel(20);
         }
 
         return false;
