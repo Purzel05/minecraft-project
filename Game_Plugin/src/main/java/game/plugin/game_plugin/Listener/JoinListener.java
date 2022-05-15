@@ -19,6 +19,8 @@ public class JoinListener implements Listener {
         player.teleport(spawn);
         player.getInventory().clear();
         event.setJoinMessage("");
+        player.setFoodLevel(20);
+        player.setHealth(20);
 
         for(Player p : Bukkit.getOnlinePlayers()) {
             if(!p.getName().equalsIgnoreCase(player.getName())) {
