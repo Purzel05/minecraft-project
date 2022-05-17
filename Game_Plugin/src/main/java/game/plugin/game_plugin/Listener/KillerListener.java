@@ -29,12 +29,9 @@ public class KillerListener implements Listener {
                     Player killerPlayer = (Player) killerEntity;
                     killedPlayer.sendMessage("§5§l§[Du wurdest von " + killerPlayer.getName() + ("§5§l§[ und dem allmächtigem Schleggagott zerquetscht"));
 
-                    ItemStack Arrows = new ItemStack(Material.ARROW, 32);
                     KillcounterScoreboard killerScoreboard = StartCommand.scoreboards.get(killerPlayer.getUniqueId());
                     killerScoreboard.killUpdate();
                     killerPlayer.setHealth(20);
-                    killerPlayer.getInventory().remove(Material.ARROW);
-                    killerPlayer.getInventory().setItem(20,Arrows);
 
                     if(killerScoreboard.getContent() == 10) {
                         Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "end");
