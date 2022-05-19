@@ -9,6 +9,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.Damageable;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
 
 import java.util.*;
@@ -71,6 +73,12 @@ public class StartCommand implements CommandExecutor{
         ItemStack Bow = new ItemStack(Material.BOW, 1);
         ItemStack Arrows = new ItemStack(Material.ARROW,32);
         ItemStack Steaks = new ItemStack(Material.COOKED_BEEF, 32);
+        ItemStack Flint_and_Steel = new ItemStack(Material.FLINT_AND_STEEL, 1);
+        ItemMeta itemMeta = Flint_and_Steel.getItemMeta();
+        if (itemMeta instanceof Damageable){
+            ((Damageable)itemMeta).setDamage(61);
+        }
+        Flint_and_Steel.setItemMeta(itemMeta);
 
         Location[] spawnLocations = new Location[6];
         spawnLocations[0] = loc1;
@@ -92,6 +100,7 @@ public class StartCommand implements CommandExecutor{
             players[num].getInventory().setItem(1,Bow);
             players[num].getInventory().setItem(20,Arrows);
             players[num].getInventory().setItem(2, Steaks);
+            players[num].getInventory().setItem(7,Flint_and_Steel);
             players[num].setGameMode(GameMode.SURVIVAL);
             players[num].setHealth(20);
             players[num].setFoodLevel(20);
