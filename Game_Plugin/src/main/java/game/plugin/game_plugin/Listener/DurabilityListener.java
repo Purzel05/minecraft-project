@@ -27,6 +27,8 @@ public class DurabilityListener implements Listener {
     @EventHandler
     public void onItemDamage(PlayerItemDamageEvent event) {
 
+        event.setCancelled(true);
+
     }
 
 }
