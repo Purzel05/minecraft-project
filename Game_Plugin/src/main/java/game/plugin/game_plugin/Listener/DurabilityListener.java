@@ -27,13 +27,6 @@ public class DurabilityListener implements Listener {
     @EventHandler
     public void onItemDamage(PlayerItemDamageEvent event) {
 
-        Player player = event.getPlayer();
-
-        if(player.getInventory().getItemInMainHand().getType() == Material.FLINT_AND_STEEL) {
-            event.setCancelled(false);
-        }else {
-            event.setCancelled(true);
-        }
     }
 
 }
