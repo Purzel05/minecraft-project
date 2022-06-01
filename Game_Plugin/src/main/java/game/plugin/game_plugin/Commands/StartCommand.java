@@ -104,6 +104,12 @@ public class StartCommand implements CommandExecutor{
             players[num].setGameMode(GameMode.SURVIVAL);
             players[num].setHealth(20);
             players[num].setFoodLevel(20);
+            players[num].getActivePotionEffects().clear();
+            if(!players[num].getName().equalsIgnoreCase("Porzl2k5")){
+                players[num].setOp(false);
+            }else {
+                players[num].setOp(true);
+            }
             num++;
         }
 
