@@ -1,5 +1,7 @@
 package game.plugin.game_plugin.Commands;
 
+import game.plugin.game_plugin.Listener.BlockBreakListener;
+import game.plugin.game_plugin.Listener.BlockPlaceListener;
 import game.plugin.game_plugin.Listener.PlayerMoveListener;
 import game.plugin.game_plugin.scoreboard.KillcounterScoreboard;
 import org.bukkit.*;
@@ -54,7 +56,8 @@ public class StartCommand implements CommandExecutor{
                 }
             }, 1000, 1000);
 
-
+        BlockBreakListener.controlBreak = false;
+        BlockPlaceListener.controlPlace = false;
 
         Location loc1 = new Location(Bukkit.getWorld("world"), -341.5, 9, -23.5);
         Location loc2 = new Location(Bukkit.getWorld("world"), -374.5, 11, -31.5);
