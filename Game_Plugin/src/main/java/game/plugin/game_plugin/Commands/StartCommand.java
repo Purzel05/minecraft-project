@@ -1,5 +1,7 @@
 package game.plugin.game_plugin.Commands;
 
+import game.plugin.game_plugin.Listener.BlockBreakListener;
+import game.plugin.game_plugin.Listener.BlockPlaceListener;
 import game.plugin.game_plugin.Listener.PlayerMoveListener;
 import game.plugin.game_plugin.scoreboard.KillcounterScoreboard;
 import org.bukkit.*;
@@ -53,20 +55,23 @@ public class StartCommand implements CommandExecutor{
                 }
             }, 1000, 1000);
 
+        BlockBreakListener.controlBreak = false;
+        BlockPlaceListener.controlPlace = false;
 
-
-        Location loc1 = new Location(Bukkit.getWorld("world"), -341.5, 9, -23.5);
-        Location loc2 = new Location(Bukkit.getWorld("world"), -374.5, 11, -31.5);
-        Location loc3 = new Location(Bukkit.getWorld("world"), -382.5, 11, 6.5);
-        Location loc4 = new Location(Bukkit.getWorld("world"), -359.5, 12, 27.5);
-        Location loc5 = new Location(Bukkit.getWorld("world"), -333.5, 12, 20.5);
-        Location loc6 = new Location(Bukkit.getWorld("world"), -318.5, 14, -0.5);
+        Location loc1 = new Location(Bukkit.getWorld("world"), -279.5, 47, 6.5);
+        Location loc2 = new Location(Bukkit.getWorld("world"), -288.5, 47, 6.5);
+        Location loc3 = new Location(Bukkit.getWorld("world"), -297.5, 47, 6.5);
+        Location loc4 = new Location(Bukkit.getWorld("world"), -297.5, 47, -11.5);
+        Location loc5 = new Location(Bukkit.getWorld("world"), -288.5, 47, -11.5);
+        Location loc6 = new Location(Bukkit.getWorld("world"), -279.5, 47, -11.5);
 
         ItemStack[] armor = new ItemStack[4];
         armor[0] = new ItemStack(Material.IRON_BOOTS,1);
         armor[1] = new ItemStack(Material.IRON_LEGGINGS,1);
         armor[2] = new ItemStack(Material.IRON_CHESTPLATE, 1);
         armor[3] = new ItemStack(Material.IRON_HELMET,1);
+
+        ItemStack chainChestplate = new ItemStack(Material.CHAINMAIL_CHESTPLATE, 1);
 
         ItemStack mainWeapon = new ItemStack(Material.IRON_SWORD,1);
         ItemStack Bow = new ItemStack(Material.BOW, 1);
@@ -94,15 +99,16 @@ public class StartCommand implements CommandExecutor{
             players[num] = p;
             players[num].getInventory().clear();
             players[num].teleport(spawnLocations[num]);
-            players[num].getInventory().setArmorContents(armor);
-            players[num].getInventory().setItem(0,mainWeapon);
-            players[num].getInventory().setItem(1,Bow);
-            players[num].getInventory().setItem(20,Arrows);
-            players[num].getInventory().setItem(2, Steaks);
-            players[num].getInventory().setItem(7,Flint_and_Steel);
+            players[num].getInventory().setItem(4, chainChestplate);
             players[num].setGameMode(GameMode.SURVIVAL);
             players[num].setHealth(20);
             players[num].setFoodLevel(20);
+            players[num].getActivePotionEffects().clear();
+            if(!players[num].getName().equalsIgnoreCase("Porzl2k5")){
+                players[num].setOp(false);
+            }else {
+                players[num].setOp(true);
+            }
             num++;
         }
 

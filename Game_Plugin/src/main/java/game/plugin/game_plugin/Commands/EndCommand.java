@@ -1,5 +1,7 @@
 package game.plugin.game_plugin.Commands;
 
+import game.plugin.game_plugin.Listener.BlockBreakListener;
+import game.plugin.game_plugin.Listener.BlockPlaceListener;
 import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -8,7 +10,6 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.scoreboard.DisplaySlot;
 
 import java.util.List;
 
@@ -36,6 +37,9 @@ public class EndCommand implements CommandExecutor {
             }
         }
 
+        BlockBreakListener.controlBreak = true;
+        BlockPlaceListener.controlPlace = true;
+
         for(Player p : Bukkit.getOnlinePlayers()) {
             p.setGameMode(GameMode.SURVIVAL);
             p.teleport(spawn);
@@ -43,6 +47,9 @@ public class EndCommand implements CommandExecutor {
             p.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
             p.setHealth(20);
             p.setFoodLevel(20);
+            if(p.isOp() == false){
+                p.setOp(true);
+            }
         }
 
         return false;
