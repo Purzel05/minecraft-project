@@ -59,12 +59,12 @@ public class StartCommand implements CommandExecutor{
         BlockBreakListener.controlBreak = false;
         BlockPlaceListener.controlPlace = false;
 
-        Location loc1 = new Location(Bukkit.getWorld("world"), -341.5, 9, -23.5);
-        Location loc2 = new Location(Bukkit.getWorld("world"), -374.5, 11, -31.5);
-        Location loc3 = new Location(Bukkit.getWorld("world"), -382.5, 11, 6.5);
-        Location loc4 = new Location(Bukkit.getWorld("world"), -359.5, 12, 27.5);
-        Location loc5 = new Location(Bukkit.getWorld("world"), -333.5, 12, 20.5);
-        Location loc6 = new Location(Bukkit.getWorld("world"), -318.5, 14, -0.5);
+        Location loc1 = new Location(Bukkit.getWorld("world"), -279.5, 47, 6.5);
+        Location loc2 = new Location(Bukkit.getWorld("world"), -288.5, 47, 6.5);
+        Location loc3 = new Location(Bukkit.getWorld("world"), -297.5, 47, 6.5);
+        Location loc4 = new Location(Bukkit.getWorld("world"), -297.5, 47, -11.5);
+        Location loc5 = new Location(Bukkit.getWorld("world"), -288.5, 47, -11.5);
+        Location loc6 = new Location(Bukkit.getWorld("world"), -279.5, 47, -11.5);
 
         ItemStack[] armor = new ItemStack[4];
         armor[0] = new ItemStack(Material.IRON_BOOTS,1);
