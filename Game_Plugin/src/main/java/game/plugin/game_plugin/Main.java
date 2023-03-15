@@ -47,6 +47,7 @@ public final class Main extends JavaPlugin {
         pluginManager.registerEvents(new DurabilityListener(),this);
         pluginManager.registerEvents(new BlockBreakListener(), this);
         pluginManager.registerEvents(new BlockPlaceListener(),this);
+        pluginManager.registerEvents(new PlayerRightClickListener(), this);
 
     }
 }

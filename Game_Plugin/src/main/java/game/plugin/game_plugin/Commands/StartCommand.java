@@ -71,7 +71,8 @@ public class StartCommand implements CommandExecutor{
         armor[2] = new ItemStack(Material.IRON_CHESTPLATE, 1);
         armor[3] = new ItemStack(Material.IRON_HELMET,1);
 
-        ItemStack chainChestplate = new ItemStack(Material.CHAINMAIL_CHESTPLATE, 1);
+        ItemStack berserkKit = new ItemStack(Material.GRAY_DYE, 1);
+        ItemStack archerKit = new ItemStack(Material.LIME_DYE,1);
 
         ItemStack mainWeapon = new ItemStack(Material.IRON_SWORD,1);
         ItemStack Bow = new ItemStack(Material.BOW, 1);
@@ -99,7 +100,8 @@ public class StartCommand implements CommandExecutor{
             players[num] = p;
             players[num].getInventory().clear();
             players[num].teleport(spawnLocations[num]);
-            players[num].getInventory().setItem(4, chainChestplate);
+            players[num].getInventory().setItem(4, berserkKit);
+            players[num].getInventory().setItem(0, archerKit);
             players[num].setGameMode(GameMode.SURVIVAL);
             players[num].setHealth(20);
             players[num].setFoodLevel(20);
