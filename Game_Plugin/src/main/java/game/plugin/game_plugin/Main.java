@@ -43,7 +43,7 @@ public final class Main extends JavaPlugin {
         pluginManager.registerEvents(new PlayerDeathListener(),this);
         pluginManager.registerEvents(new RespawnListener(),this);
         pluginManager.registerEvents(new PlayerMoveListener(),this);
-        pluginManager.registerEvents(new CollectListener(),this);
+        pluginManager.registerEvents(new ArrowCollectListener(),this);
         pluginManager.registerEvents(new DurabilityListener(),this);
         pluginManager.registerEvents(new BlockBreakListener(), this);
         pluginManager.registerEvents(new BlockPlaceListener(),this);

@@ -8,18 +8,18 @@ import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
 
+import javax.swing.plaf.ButtonUI;
 import java.util.*;
 
 public class StartCommand implements CommandExecutor{
-
     public static Map<UUID, KillcounterScoreboard> scoreboards = new HashMap<>();
-
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
@@ -36,7 +36,7 @@ public class StartCommand implements CommandExecutor{
         for(Player p : Bukkit.getOnlinePlayers()) {
                 scoreboards.put(p.getUniqueId(), new KillcounterScoreboard(p));
         }
-
+        
         Timer timer = new Timer();
 
             timer.scheduleAtFixedRate(new TimerTask() {
@@ -106,7 +106,7 @@ public class StartCommand implements CommandExecutor{
             players[num].setHealth(20);
             players[num].setFoodLevel(20);
             players[num].getActivePotionEffects().clear();
-            if(!players[num].getName().equalsIgnoreCase("Porzl2k5")){
+            if(!players[num].getName().equalsIgnoreCase("Porzl2k5") || !players[num].getName().equalsIgnoreCase("Schleggamann")){
                 players[num].setOp(false);
             }else {
                 players[num].setOp(true);

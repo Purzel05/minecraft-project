@@ -23,7 +23,7 @@ public class RespawnListener implements Listener {
     @EventHandler
     public void onDeath(EntityDeathEvent event){
 
-        Location respawnLocation = new Location(Bukkit.getWorld("world"), -392.5, 16, -13.5);
+        Location respawnLocation = new Location(Bukkit.getWorld("world"), -297.5, 47, -2.5);
 
         if(event.getEntity() instanceof Player) {
             Player player = (Player) event.getEntity();

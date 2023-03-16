@@ -25,7 +25,6 @@ public class PlayerInteractListener implements Listener {
 
         }
     }
-
     public void giveBerserk(Player p) {
         p.getInventory().clear();
         ItemStack[] armor = new ItemStack[4];
