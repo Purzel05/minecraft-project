@@ -23,7 +23,7 @@ public class RespawnListener implements Listener {
     @EventHandler
     public void onDeath(EntityDeathEvent event){
 
-        Location respawnLocation = new Location(Bukkit.getWorld("world"), -297.5, 47, -2.5);
+        Location respawnLocation = new Location(Bukkit.getWorld("world"), -288.5, 47, -2.5);
 
         if(event.getEntity() instanceof Player) {
             Player player = (Player) event.getEntity();
@@ -33,7 +33,7 @@ public class RespawnListener implements Listener {
                 public void run() {
                     player.spigot().respawn();
                     player.teleport(respawnLocation);
-                    player.getInventory().remove(Material.ARROW);
+                    player.getInventory().clear();
                     player.getInventory().setItem(20,arrows);
                 }
             }, 20);

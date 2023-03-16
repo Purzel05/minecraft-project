@@ -36,7 +36,7 @@ public class StartCommand implements CommandExecutor{
         for(Player p : Bukkit.getOnlinePlayers()) {
                 scoreboards.put(p.getUniqueId(), new KillcounterScoreboard(p));
         }
-        
+
         Timer timer = new Timer();
 
             timer.scheduleAtFixedRate(new TimerTask() {
@@ -65,25 +65,8 @@ public class StartCommand implements CommandExecutor{
         Location loc5 = new Location(Bukkit.getWorld("world"), -288.5, 47, -11.5);
         Location loc6 = new Location(Bukkit.getWorld("world"), -279.5, 47, -11.5);
 
-        ItemStack[] armor = new ItemStack[4];
-        armor[0] = new ItemStack(Material.IRON_BOOTS,1);
-        armor[1] = new ItemStack(Material.IRON_LEGGINGS,1);
-        armor[2] = new ItemStack(Material.IRON_CHESTPLATE, 1);
-        armor[3] = new ItemStack(Material.IRON_HELMET,1);
-
         ItemStack berserkKit = new ItemStack(Material.GRAY_DYE, 1);
         ItemStack archerKit = new ItemStack(Material.LIME_DYE,1);
-
-        ItemStack mainWeapon = new ItemStack(Material.IRON_SWORD,1);
-        ItemStack Bow = new ItemStack(Material.BOW, 1);
-        ItemStack Arrows = new ItemStack(Material.ARROW,32);
-        ItemStack Steaks = new ItemStack(Material.COOKED_BEEF, 32);
-        ItemStack Flint_and_Steel = new ItemStack(Material.FLINT_AND_STEEL, 1);
-        ItemMeta itemMeta = Flint_and_Steel.getItemMeta();
-        if (itemMeta instanceof Damageable){
-            ((Damageable)itemMeta).setDamage(61);
-        }
-        Flint_and_Steel.setItemMeta(itemMeta);
 
         Location[] spawnLocations = new Location[6];
         spawnLocations[0] = loc1;

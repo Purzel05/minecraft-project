@@ -7,13 +7,21 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.Damageable;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class PlayerRightClickListener implements Listener {
 
     @EventHandler
     public void onRightClick(PlayerInteractEvent event) {
         Player player = event.getPlayer();
-        ItemStack flintAndSteel = new ItemStack(Material.FLINT_AND_STEEL, 1);
+
+        ItemStack Flint_and_Steel = new ItemStack(Material.FLINT_AND_STEEL, 1);
+        ItemMeta itemMeta = Flint_and_Steel.getItemMeta();
+        if (itemMeta instanceof Damageable){
+            ((Damageable)itemMeta).setDamage(61);
+        }
+        Flint_and_Steel.setItemMeta(itemMeta);
 
         ItemStack[] armorBerserk = new ItemStack[4];
         armorBerserk[0] = new ItemStack(Material.CHAINMAIL_BOOTS, 1);
@@ -39,7 +47,7 @@ public class PlayerRightClickListener implements Listener {
             player.getInventory().setItem(0, weaponBerserk);
             player.getInventory().setItemInOffHand(shield);
             player.getInventory().setItem(1, food);
-            player.getInventory().setItem(2, flintAndSteel);
+            player.getInventory().setItem(2, Flint_and_Steel);
         }
         if (player.getItemInHand().getType() == Material.LIME_DYE && player.getItemInHand() != null) {
             player.getInventory().clear();
@@ -48,7 +56,7 @@ public class PlayerRightClickListener implements Listener {
             player.getInventory().setItem(3, food);
             player.getInventory().setItem(1, bow);
             player.getInventory().setItem(0, meeleWeapon);
-            player.getInventory().setItem(4, flintAndSteel);
+            player.getInventory().setItem(4, Flint_and_Steel);
         }
     }
 }
