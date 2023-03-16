@@ -6,7 +6,7 @@ import org.bukkit.event.player.PlayerPickupArrowEvent;
 
 public class ArrowCollectListener implements Listener {
     @EventHandler
-    public void onCollect(PlayerPickupArrowEvent event) {
+    public void onArrowCollect(PlayerPickupArrowEvent event) {
 
         event.setCancelled(true);
 

@@ -58,12 +58,12 @@ public class StartCommand implements CommandExecutor{
         BlockBreakListener.controlBreak = false;
         BlockPlaceListener.controlPlace = false;
 
-        Location loc1 = new Location(Bukkit.getWorld("world"), -279.5, 47, 6.5);
-        Location loc2 = new Location(Bukkit.getWorld("world"), -288.5, 47, 6.5);
-        Location loc3 = new Location(Bukkit.getWorld("world"), -297.5, 47, 6.5);
-        Location loc4 = new Location(Bukkit.getWorld("world"), -297.5, 47, -11.5);
-        Location loc5 = new Location(Bukkit.getWorld("world"), -288.5, 47, -11.5);
-        Location loc6 = new Location(Bukkit.getWorld("world"), -279.5, 47, -11.5);
+        Location loc1 = new Location(Bukkit.getWorld("world"), 0.5, 68, -7.5);
+        Location loc2 = new Location(Bukkit.getWorld("world"), 7.5, 68, -7.5);
+        Location loc3 = new Location(Bukkit.getWorld("world"), 7.5, 68, 0.5);
+        Location loc4 = new Location(Bukkit.getWorld("world"), 0.5, 68, 7.5);
+        Location loc5 = new Location(Bukkit.getWorld("world"), -7.5, 68, 7.5);
+        Location loc6 = new Location(Bukkit.getWorld("world"), -7.5, 68, 0.5);
 
         ItemStack berserkKit = new ItemStack(Material.GRAY_DYE, 1);
         ItemStack archerKit = new ItemStack(Material.LIME_DYE,1);

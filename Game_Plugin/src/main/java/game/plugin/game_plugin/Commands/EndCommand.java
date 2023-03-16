@@ -26,7 +26,7 @@ public class EndCommand implements CommandExecutor {
             sender.sendMessage(ChatColor.DARK_PURPLE + "Lobby_Plugin wird aktiviert!");
         }
 
-        Location spawn = new Location(Bukkit.getWorld("world"), 0.5, 0, 0.5);
+        Location spawn = new Location(Bukkit.getWorld("world"), 0.5, 131, 0.5);
 
         World world = Bukkit.getWorld("world");
         List<Entity> entityList = world.getEntities();

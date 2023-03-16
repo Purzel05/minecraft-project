@@ -15,7 +15,7 @@ public class JoinListener implements Listener {
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         player.sendMessage(ChatColor.AQUA + "Sei gegrüßt " + ChatColor.YELLOW + player.getName() + ChatColor.AQUA + "!");
-        Location spawn = new Location(Bukkit.getWorld("world"), 0.5, 0, 0.5);
+        Location spawn = new Location(Bukkit.getWorld("world"), 0.5, 131, 0.5);
         player.teleport(spawn);
         player.getInventory().clear();
         event.setJoinMessage("");

@@ -14,9 +14,9 @@ public class WarpCommand implements CommandExecutor {
 
         Player executor = (Player) sender;
 
-        Location spawn = new Location(Bukkit.getWorld("world"), 0.5, 0, 0.5);
+        Location spawn = new Location(Bukkit.getWorld("world"), 0.5, 131, 0.5);
 
-        Location map = new Location(Bukkit.getWorld("world"), -288.5, 47, -2.5);
+        Location map = new Location(Bukkit.getWorld("world"), 0.5, 68, 0.5);
 
 
         if(args.length == 0) {
