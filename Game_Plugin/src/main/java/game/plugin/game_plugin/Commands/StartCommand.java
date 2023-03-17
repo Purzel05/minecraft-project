@@ -2,6 +2,7 @@ package game.plugin.game_plugin.Commands;
 
 import game.plugin.game_plugin.Listener.BlockBreakListener;
 import game.plugin.game_plugin.Listener.BlockPlaceListener;
+import game.plugin.game_plugin.Listener.EntityDamageListener;
 import game.plugin.game_plugin.Listener.PlayerMoveListener;
 import game.plugin.game_plugin.scoreboard.KillcounterScoreboard;
 import org.bukkit.*;
@@ -46,13 +47,14 @@ public class StartCommand implements CommandExecutor{
                         timer.cancel();
                         Bukkit.broadcastMessage(ChatColor.RED + "Start");
                         PlayerMoveListener.controlMove = false;
+                        EntityDamageListener.damageControl = false;
                         time = 11;
                     }
                 }
             }, 1000, 1000);
 
-        BlockBreakListener.controlBreak = false;
-        BlockPlaceListener.controlPlace = false;
+        BlockBreakListener.controlBreak = true;
+        BlockPlaceListener.controlPlace = true;
 
         Location loc1 = new Location(Bukkit.getWorld("world"), 0.5, 68, -7.5);
         Location loc2 = new Location(Bukkit.getWorld("world"), 7.5, 68, -7.5);
@@ -85,10 +87,10 @@ public class StartCommand implements CommandExecutor{
             players[num].setHealth(20);
             players[num].setFoodLevel(20);
             players[num].getActivePotionEffects().clear();
-            if(!players[num].getName().equalsIgnoreCase("Porzl2k5") || !players[num].getName().equalsIgnoreCase("Schleggamann")){
-                players[num].setOp(false);
-            }else {
+            if(players[num].getName().equalsIgnoreCase("Porzl2k5") || players[num].getName().equalsIgnoreCase("Schleggamann")){
                 players[num].setOp(true);
+            }else {
+                players[num].setOp(false);
             }
             num++;
         }

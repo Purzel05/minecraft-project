@@ -9,34 +9,22 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Main extends JavaPlugin {
-
     @Override
     public void onEnable() {
-
         commandRegistration();
         listenerRegistrations();
-
     }
-
     @Override
     public void onDisable() {
 
-
-
     }
-
     public void commandRegistration() {
-
         getCommand("warp").setExecutor(new WarpCommand());
         getCommand("end").setExecutor(new EndCommand());
         getCommand("start").setExecutor(new StartCommand());
-
     }
-
     private void listenerRegistrations(){
-
         PluginManager pluginManager = Bukkit.getPluginManager();
-
         pluginManager.registerEvents(new JoinListener(), this);
         pluginManager.registerEvents(new KillerListener(), this);
         pluginManager.registerEvents(new QuitListener(),this);
@@ -48,6 +36,6 @@ public final class Main extends JavaPlugin {
         pluginManager.registerEvents(new BlockBreakListener(), this);
         pluginManager.registerEvents(new BlockPlaceListener(),this);
         pluginManager.registerEvents(new PlayerRightClickListener(), this);
-
+        pluginManager.registerEvents(new EntityDamageListener(), this);
     }
 }
