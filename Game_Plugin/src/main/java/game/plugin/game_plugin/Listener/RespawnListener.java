@@ -1,5 +1,6 @@
 package game.plugin.game_plugin.Listener;
 
+import game.plugin.game_plugin.Commands.StartCommand;
 import game.plugin.game_plugin.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -23,6 +24,9 @@ public class RespawnListener implements Listener {
     @EventHandler
     public void onDeath(EntityDeathEvent event){
 
+        ItemStack berserkKit = new ItemStack(Material.GRAY_DYE, 1);
+        ItemStack archerKit = new ItemStack(Material.LIME_DYE,1);
+
         Location respawnLocation = new Location(Bukkit.getWorld("world"), 0.5, 68, 0.5);
 
         if(event.getEntity() instanceof Player) {
@@ -35,6 +39,8 @@ public class RespawnListener implements Listener {
                     player.teleport(respawnLocation);
                     player.getInventory().clear();
                     player.getInventory().setItem(20,arrows);
+                    player.getInventory().setItem(0, archerKit);
+                    player.getInventory().setItem(4, berserkKit);
                 }
             }, 20);
         }

@@ -5,11 +5,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 
 public class PlayerMoveListener implements Listener {
-    public static boolean control = false;
+    public static boolean controlMove = false;
 
     @EventHandler
     public void onMove(PlayerMoveEvent event) {
-        if(control == true) {
+        if(controlMove == true) {
             event.setCancelled(true);
         }
     }

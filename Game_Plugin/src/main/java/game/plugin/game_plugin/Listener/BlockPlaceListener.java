@@ -9,7 +9,7 @@ public class BlockPlaceListener implements Listener {
     public static boolean controlPlace = true;
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent event) {
-        if(controlPlace == false){
+        if(controlPlace == false && !event.getBlockPlaced().isPassable()){
             event.setCancelled(true);
         }
     }

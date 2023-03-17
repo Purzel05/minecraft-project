@@ -8,14 +8,10 @@ import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.Damageable;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
 
-import javax.swing.plaf.ButtonUI;
 import java.util.*;
 
 public class StartCommand implements CommandExecutor{
@@ -31,7 +27,7 @@ public class StartCommand implements CommandExecutor{
                 sender.sendMessage(ChatColor.DARK_PURPLE + "Lobby_Plugin wird deaktiviert!");
             }
 
-            PlayerMoveListener.control = true;
+            PlayerMoveListener.controlMove = true;
 
         for(Player p : Bukkit.getOnlinePlayers()) {
                 scoreboards.put(p.getUniqueId(), new KillcounterScoreboard(p));
@@ -49,7 +45,7 @@ public class StartCommand implements CommandExecutor{
                     if (time == 1) {
                         timer.cancel();
                         Bukkit.broadcastMessage(ChatColor.RED + "Start");
-                        PlayerMoveListener.control = false;
+                        PlayerMoveListener.controlMove = false;
                         time = 11;
                     }
                 }
