@@ -8,7 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 
 public class BlockBreakListener implements Listener {
-    public static boolean controlBreak = false;
+    public static boolean controlBreak = true;
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event){
         if(controlBreak == true) {

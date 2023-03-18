@@ -20,6 +20,10 @@ public class StartCommand implements CommandExecutor{
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
+        if(BlockBreakListener.controlBreak == false || BlockPlaceListener.controlPlace == false) {
+            Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "build off");
+        }
+
         Plugin lobby_Plugin = Bukkit.getPluginManager().getPlugin("Lobby_Plugin");
 
             if(lobby_Plugin.isEnabled()) {
@@ -53,9 +57,6 @@ public class StartCommand implements CommandExecutor{
                 }
             }, 1000, 1000);
 
-        BlockBreakListener.controlBreak = true;
-        BlockPlaceListener.controlPlace = true;
-
         Location loc1 = new Location(Bukkit.getWorld("world"), 0.5, 68, -7.5);
         Location loc2 = new Location(Bukkit.getWorld("world"), 7.5, 68, -7.5);
         Location loc3 = new Location(Bukkit.getWorld("world"), 7.5, 68, 0.5);
@@ -81,7 +82,7 @@ public class StartCommand implements CommandExecutor{
             players[num] = p;
             players[num].getInventory().clear();
             players[num].teleport(spawnLocations[num]);
-            players[num].getInventory().setItem(4, berserkKit);
+            players[num].getInventory().setItem(8, berserkKit);
             players[num].getInventory().setItem(0, archerKit);
             players[num].setGameMode(GameMode.SURVIVAL);
             players[num].setHealth(20);
