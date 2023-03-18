@@ -1,7 +1,5 @@
 package game.plugin.game_plugin.Commands;
 
-import game.plugin.game_plugin.Listener.BlockBreakListener;
-import game.plugin.game_plugin.Listener.BlockPlaceListener;
 import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -36,9 +34,6 @@ public class EndCommand implements CommandExecutor {
                 i.remove();
             }
         }
-
-        BlockBreakListener.controlBreak = false;
-        BlockPlaceListener.controlPlace = false;
 
         for(Player p : Bukkit.getOnlinePlayers()) {
             p.setGameMode(GameMode.SURVIVAL);
