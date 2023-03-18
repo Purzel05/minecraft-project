@@ -46,17 +46,17 @@ public class PlayerRightClickListener implements Listener {
             player.getInventory().setArmorContents(armorBerserk);
             player.getInventory().setItem(0, weaponBerserk);
             player.getInventory().setItemInOffHand(shield);
-            player.getInventory().setItem(1, food);
-            player.getInventory().setItem(2, Flint_and_Steel);
+            player.getInventory().setItem(2, food);
+            player.getInventory().setItem(1, Flint_and_Steel);
         }
         if (player.getItemInHand().getType() == Material.LIME_DYE && player.getItemInHand() != null) {
             player.getInventory().clear();
             player.getInventory().setArmorContents(armorArcher);
-            player.getInventory().setItem(2, arrows);
+            player.getInventory().setItem(20, arrows);
             player.getInventory().setItem(3, food);
             player.getInventory().setItem(1, bow);
             player.getInventory().setItem(0, meeleWeapon);
-            player.getInventory().setItem(4, Flint_and_Steel);
+            player.getInventory().setItem(2, Flint_and_Steel);
         }
     }
 }
