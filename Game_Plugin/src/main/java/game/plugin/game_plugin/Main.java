@@ -39,5 +39,6 @@ public final class Main extends JavaPlugin {
         pluginManager.registerEvents(new BlockPlaceListener(),this);
         pluginManager.registerEvents(new PlayerRightClickListener(), this);
         pluginManager.registerEvents(new EntityDamageListener(), this);
+        pluginManager.registerEvents(new PlayerInteractEntityListener(), this);
     }
 }

@@ -28,6 +28,7 @@ public class BuildCommand implements CommandExecutor {
                     } else if (BlockBreakListener.controlBreak == true && BlockPlaceListener.controlPlace == true) {
                         sender.sendMessage(ChatColor.YELLOW + "Bauen ist deaktiviert");
                     }
+                break;
                 default:
                     sender.sendMessage(ChatColor.YELLOW + "Benutze /build <on/off>");
                 break;
