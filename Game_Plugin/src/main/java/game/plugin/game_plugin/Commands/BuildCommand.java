@@ -14,13 +14,22 @@ public class BuildCommand implements CommandExecutor {
             sender.sendMessage(ChatColor.YELLOW + "Benutze /build <on/off>");
         } else if (args.length == 1) {
             switch (args[0]) {
-                case "on": BlockPlaceListener.controlPlace = false;
-                BlockBreakListener.controlBreak = false;
+                case "on":
+                    BlockPlaceListener.controlPlace = false;
+                    BlockBreakListener.controlBreak = false;
                 break;
-                case "off": BlockPlaceListener.controlPlace = true;
-                BlockBreakListener.controlBreak = true;
+                case "off":
+                    BlockPlaceListener.controlPlace = true;
+                    BlockBreakListener.controlBreak = true;
                 break;
-                default: sender.sendMessage(ChatColor.YELLOW + "Benutze /build <on/off>");
+                case "info":
+                    if(BlockBreakListener.controlBreak == false && BlockPlaceListener.controlPlace == false) {
+                        sender.sendMessage(ChatColor.YELLOW + "Bauen ist aktiviert");
+                    } else if (BlockBreakListener.controlBreak == true && BlockPlaceListener.controlPlace == true) {
+                        sender.sendMessage(ChatColor.YELLOW + "Bauen ist deaktiviert");
+                    }
+                default:
+                    sender.sendMessage(ChatColor.YELLOW + "Benutze /build <on/off>");
                 break;
             }
         }

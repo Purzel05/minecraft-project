@@ -13,3 +13,6 @@ commands:
 
   start:
     description: Startet das Spiel
+
+  build:
+    description: Aktiviert/Deaktiviert das Bauen

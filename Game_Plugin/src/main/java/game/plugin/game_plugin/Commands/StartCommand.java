@@ -82,7 +82,7 @@ public class StartCommand implements CommandExecutor{
             players[num] = p;
             players[num].getInventory().clear();
             players[num].teleport(spawnLocations[num]);
-            players[num].getInventory().setItem(8, berserkKit);
+            players[num].getInventory().setItem(1, berserkKit);
             players[num].getInventory().setItem(0, archerKit);
             players[num].setGameMode(GameMode.SURVIVAL);
             players[num].setHealth(20);

@@ -1,6 +1,7 @@
 package game.plugin.game_plugin.Listener;
 
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -15,6 +16,11 @@ public class PlayerRightClickListener implements Listener {
     @EventHandler
     public void onRightClick(PlayerInteractEvent event) {
         Player player = event.getPlayer();
+        if(event.getAction() == Action.RIGHT_CLICK_BLOCK) {
+            if(event.getClickedBlock().getType() == Material.ARMOR_STAND) {
+                event.setCancelled(true);
+            }
+        }
 
         ItemStack Flint_and_Steel = new ItemStack(Material.FLINT_AND_STEEL, 1);
         ItemMeta itemMeta = Flint_and_Steel.getItemMeta();
