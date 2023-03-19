@@ -35,5 +35,4 @@ public class BuildCommand implements CommandExecutor {
         }
         return false;
     }
-
 }
