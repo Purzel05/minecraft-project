@@ -21,33 +21,36 @@ public class KillerListener implements Listener {
             Player killedPlayer = (Player) event.getEntity();
             EntityDamageEvent deathcause = killedPlayer.getLastDamageCause();
 
-            if (deathcause.getCause() == EntityDamageEvent.DamageCause.ENTITY_ATTACK || deathcause.getCause() == EntityDamageEvent.DamageCause.PROJECTILE) {
-                Entity killerEntity = (((EntityDamageByEntityEvent) deathcause).getDamager());
+            if(deathcause != null) {
 
-                if(killerEntity instanceof Projectile) {
-                    ProjectileSource projectileSender = ((Projectile) killerEntity).getShooter();
+                if (deathcause.getCause() == EntityDamageEvent.DamageCause.ENTITY_ATTACK || deathcause.getCause() == EntityDamageEvent.DamageCause.PROJECTILE) {
+                    Entity killerEntity = (((EntityDamageByEntityEvent) deathcause).getDamager());
 
-                    if(projectileSender instanceof Player){
-                        killerEntity = (Player) projectileSender;
+                    if (killerEntity instanceof Projectile) {
+                        ProjectileSource projectileSender = ((Projectile) killerEntity).getShooter();
+
+                        if (projectileSender instanceof Player) {
+                            killerEntity = (Player) projectileSender;
+                        }
                     }
-                }
-                if (killerEntity instanceof Player) {
-                    Player killerPlayer = (Player) killerEntity;
-                    killedPlayer.sendMessage("§5§l§[Du wurdest von " + killerPlayer.getName() + ("§5§l§[ und dem allmächtigem Schleggagott zerquetscht"));
-                    int arrowAmount = killerPlayer.getInventory().getItem(20).getAmount();
-                    KillcounterScoreboard killerScoreboard = StartCommand.scoreboards.get(killerPlayer.getUniqueId());
-                    killerScoreboard.killUpdate();
-                    killerPlayer.setHealth(20);
-                    killerPlayer.getInventory().getItem(20).setAmount(arrowAmount + 5);
+                    if (killerEntity instanceof Player) {
+                        Player killerPlayer = (Player) killerEntity;
+                        killedPlayer.sendMessage("§5§l§[Du wurdest von " + killerPlayer.getName() + ("§5§l§[ und dem allmächtigem Schleggagott zerquetscht"));
+                        int arrowAmount = killerPlayer.getInventory().getItem(20).getAmount();
+                        KillcounterScoreboard killerScoreboard = StartCommand.scoreboards.get(killerPlayer.getUniqueId());
+                        killerScoreboard.killUpdate();
+                        killerPlayer.setHealth(20);
+                        killerPlayer.getInventory().getItem(20).setAmount(arrowAmount + 5);
 
-                    if(killerScoreboard.getContent() == 10) {
-                        Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "end");
-                        killerPlayer.sendMessage(ChatColor.GREEN + "Du hast gewonnen!");
+                        if (killerScoreboard.getContent() == 10) {
+                            Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "end");
+                            killerPlayer.sendMessage(ChatColor.GREEN + "Du hast gewonnen!");
 
-                        for (Player p : Bukkit.getOnlinePlayers()) {
+                            for (Player p : Bukkit.getOnlinePlayers()) {
 
-                            if(!p.getName().equalsIgnoreCase(killerPlayer.getName())) {
-                                p.sendMessage(ChatColor.RED + killerPlayer.getName() + ChatColor.GREEN + " hat gewonnen!");
+                                if (!p.getName().equalsIgnoreCase(killerPlayer.getName())) {
+                                    p.sendMessage(ChatColor.RED + killerPlayer.getName() + ChatColor.GREEN + " hat gewonnen!");
+                                }
                             }
                         }
                     }
