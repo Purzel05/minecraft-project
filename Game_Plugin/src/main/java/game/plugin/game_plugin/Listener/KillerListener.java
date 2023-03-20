@@ -15,16 +15,18 @@ import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.projectiles.ProjectileSource;
 
 public class KillerListener implements Listener {
-
     @EventHandler
     public void onPlayerDeath(EntityDeathEvent event) {
         if (event.getEntity() instanceof Player) {
             Player killedPlayer = (Player) event.getEntity();
             EntityDamageEvent deathcause = killedPlayer.getLastDamageCause();
+
             if (deathcause.getCause() == EntityDamageEvent.DamageCause.ENTITY_ATTACK || deathcause.getCause() == EntityDamageEvent.DamageCause.PROJECTILE) {
                 Entity killerEntity = (((EntityDamageByEntityEvent) deathcause).getDamager());
+
                 if(killerEntity instanceof Projectile) {
                     ProjectileSource projectileSender = ((Projectile) killerEntity).getShooter();
+
                     if(projectileSender instanceof Player){
                         killerEntity = (Player) projectileSender;
                     }
@@ -37,10 +39,13 @@ public class KillerListener implements Listener {
                     killerScoreboard.killUpdate();
                     killerPlayer.setHealth(20);
                     killerPlayer.getInventory().getItem(20).setAmount(arrowAmount + 5);
+
                     if(killerScoreboard.getContent() == 10) {
                         Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "end");
                         killerPlayer.sendMessage(ChatColor.GREEN + "Du hast gewonnen!");
+
                         for (Player p : Bukkit.getOnlinePlayers()) {
+
                             if(!p.getName().equalsIgnoreCase(killerPlayer.getName())) {
                                 p.sendMessage(ChatColor.RED + killerPlayer.getName() + ChatColor.GREEN + " hat gewonnen!");
                             }
