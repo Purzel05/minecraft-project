@@ -24,7 +24,8 @@ public class KillerListener implements Listener {
             if(deathcause != null) {
 
                 if (deathcause.getCause() == EntityDamageEvent.DamageCause.ENTITY_ATTACK || deathcause.getCause() == EntityDamageEvent.DamageCause.PROJECTILE) {
-                    Entity killerEntity = (((EntityDamageByEntityEvent) deathcause).getDamager());
+                    EntityDamageByEntityEvent entityDamageByEntityEvent = (EntityDamageByEntityEvent) deathcause;
+                    Entity killerEntity = entityDamageByEntityEvent.getDamager();
 
                     if (killerEntity instanceof Projectile) {
                         ProjectileSource projectileSender = ((Projectile) killerEntity).getShooter();
