@@ -4,6 +4,7 @@ import game.plugin.game_plugin.Commands.StartCommand;
 import game.plugin.game_plugin.scoreboard.KillcounterScoreboard;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
@@ -20,12 +21,13 @@ public class KillerListener implements Listener {
         if (event.getEntity() instanceof Player) {
             Player killedPlayer = (Player) event.getEntity();
             EntityDamageEvent deathcause = killedPlayer.getLastDamageCause();
+            Player hasAxe = killedPlayer.getKiller();
 
             if(deathcause != null) {
 
-                if (deathcause.getCause() == EntityDamageEvent.DamageCause.ENTITY_ATTACK || deathcause.getCause() == EntityDamageEvent.DamageCause.PROJECTILE) {
+                if (deathcause.getCause() == EntityDamageEvent.DamageCause.ENTITY_ATTACK || deathcause.getCause() == EntityDamageEvent.DamageCause.PROJECTILE || hasAxe.getInventory().getItemInHand().getType() == Material.IRON_AXE) {
                     EntityDamageByEntityEvent entityDamageByEntityEvent = (EntityDamageByEntityEvent) deathcause;
-                    Entity killerEntity = entityDamageByEntityEvent.getDamager();
+                    Entity killerEntity = killedPlayer.getKiller();
 
                     if (killerEntity instanceof Projectile) {
                         ProjectileSource projectileSender = ((Projectile) killerEntity).getShooter();
@@ -34,7 +36,7 @@ public class KillerListener implements Listener {
                             killerEntity = (Player) projectileSender;
                         }
                     }
-                    if (killerEntity instanceof Player) {
+                    if (killerEntity != null) {
                         Player killerPlayer = (Player) killerEntity;
                         killedPlayer.sendMessage("§5§l§[Du wurdest von " + killerPlayer.getName() + ("§5§l§[ und dem allmächtigem Schleggagott zerquetscht"));
                         int arrowAmount = killerPlayer.getInventory().getItem(20).getAmount();
