@@ -2,6 +2,7 @@ package game.plugin.game_plugin.Commands;
 
 import game.plugin.game_plugin.Listener.BlockBreakListener;
 import game.plugin.game_plugin.Listener.BlockPlaceListener;
+import game.plugin.game_plugin.Listener.PlayerInteractEntityListener;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
