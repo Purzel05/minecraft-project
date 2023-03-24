@@ -3,7 +3,6 @@ package game.plugin.game_plugin;
 import game.plugin.game_plugin.Commands.BuildCommand;
 import game.plugin.game_plugin.Commands.EndCommand;
 import game.plugin.game_plugin.Commands.StartCommand;
-import game.plugin.game_plugin.Commands.WarpCommand;
 import game.plugin.game_plugin.Listener.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -20,7 +19,6 @@ public final class Main extends JavaPlugin {
 
     }
     public void commandRegistration() {
-        getCommand("warp").setExecutor(new WarpCommand());
         getCommand("end").setExecutor(new EndCommand());
         getCommand("start").setExecutor(new StartCommand());
         getCommand("build").setExecutor(new BuildCommand());

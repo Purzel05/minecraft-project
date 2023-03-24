@@ -11,3 +11,5 @@ commands:
   zevibuild:
     description: Zevi Buildrechte an/aus
 
+  warp:
+    description: Teleportiert zu bestimmten Warppunkt

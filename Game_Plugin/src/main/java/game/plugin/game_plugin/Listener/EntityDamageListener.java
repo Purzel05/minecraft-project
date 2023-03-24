@@ -19,7 +19,7 @@ public class EntityDamageListener implements Listener {
         }
 
         if (BlockBreakListener.controlBreak == true) {
-            if (entity.getType().equals(EntityType.ARMOR_STAND) || entity.getType().equals(EntityType.PAINTING)){
+            if (entity.getType().equals(EntityType.ARMOR_STAND)){
                 event.setCancelled(true);
             }
         }

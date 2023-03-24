@@ -1,4 +1,4 @@
-package game.plugin.game_plugin.Commands;
+package lobby_plugin.lobby_plugin.Commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -27,4 +27,5 @@ public class WarpCommand implements CommandExecutor {
         }
         return false;
     }
+
 }

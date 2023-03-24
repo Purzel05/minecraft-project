@@ -2,11 +2,13 @@ package game.plugin.game_plugin.Listener;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerArmorStandManipulateEvent;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class PlayerInteractEntityListener implements Listener {
@@ -28,5 +30,15 @@ public class PlayerInteractEntityListener implements Listener {
                 }
             }
         }
+    }
+    @EventHandler
+    public void onEntityInteract(PlayerInteractEntityEvent event) {
+        Entity interactedEntity = event.getRightClicked();
+            if (interactedEntity.getType().equals(EntityType.PAINTING) && BlockBreakListener.controlBreak == true) {
+                event.setCancelled(true);
+            }
+            if (interactedEntity.getType().equals(EntityType.ITEM_FRAME) && BlockBreakListener.controlBreak == true) {
+                event.setCancelled(true);
+            }
     }
 }
