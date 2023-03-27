@@ -4,6 +4,7 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.ItemFrame;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
@@ -17,6 +18,17 @@ public class PlayerInteractEntityListener implements Listener {
     public void onArmorstandManipulate(PlayerArmorStandManipulateEvent event) {
         if (BlockBreakListener.controlBreak == true && BlockPlaceListener.controlPlace == true) {
             event.setCancelled(true);
+        }
+    }
+
+    @EventHandler
+    public void onEntityInteract(PlayerInteractEntityEvent event) {
+        Entity interactedEntity = event.getRightClicked();
+
+        if(interactedEntity.getType().equals(EntityType.GLOW_ITEM_FRAME) || interactedEntity.getType().equals(EntityType.ITEM_FRAME)) {
+            if(BlockBreakListener.controlBreak == true) {
+                event.setCancelled(true);
+            }
         }
     }
 
