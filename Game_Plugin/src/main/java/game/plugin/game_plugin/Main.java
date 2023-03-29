@@ -5,6 +5,8 @@ import game.plugin.game_plugin.Commands.EndCommand;
 import game.plugin.game_plugin.Commands.StartCommand;
 import game.plugin.game_plugin.Listener.*;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.ItemFrame;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -13,6 +15,10 @@ public final class Main extends JavaPlugin {
     public void onEnable() {
         commandRegistration();
         listenerRegistrations();
+        for(Entity e : Bukkit.getWorld("world").getEntities()) {
+            ItemFrame itemFrame = (ItemFrame) e;
+            itemFrame.setFixed(true);
+        }
     }
     @Override
     public void onDisable() {

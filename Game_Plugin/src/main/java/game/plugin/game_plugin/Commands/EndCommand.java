@@ -36,12 +36,17 @@ public class EndCommand implements CommandExecutor {
         }
 
         for(Player p : Bukkit.getOnlinePlayers()) {
+            if(p.isDead()) {
+                p.spigot().respawn();
+                p.teleport(spawn);
+            }
             p.setGameMode(GameMode.SURVIVAL);
             p.teleport(spawn);
             p.getInventory().clear();
             p.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
             p.setHealth(20);
             p.setFoodLevel(20);
+
         }
 
         return false;
