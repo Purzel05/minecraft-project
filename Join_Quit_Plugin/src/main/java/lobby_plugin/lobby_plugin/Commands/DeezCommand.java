@@ -8,12 +8,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class DeezCommand implements CommandExecutor {
-
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-
         Player playerSender = (Player) sender;
-
         if (playerSender.getName().equalsIgnoreCase("Porzl2k5")) {
                if (PlayerMoveListener.deez == false) {
                     PlayerMoveListener.deez = true;
@@ -25,10 +22,8 @@ public class DeezCommand implements CommandExecutor {
                }
             }
             else {
-                playerSender.sendMessage(ChatColor.RED + "Das darf nur der Leo!");
+                playerSender.sendMessage(ChatColor.DARK_RED + "Das darf nur der Leo!");
             }
-
             return false;
-
     }
 }

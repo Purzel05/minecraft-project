@@ -11,11 +11,9 @@ import org.bukkit.entity.Player;
 public class WarpCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-
         Player executor = (Player) sender;
         Location spawn = new Location(Bukkit.getWorld("world"), 0.5, 131, 0.5);
         Location map = new Location(Bukkit.getWorld("world"), 0.5, 68, 0.5);
-
         if(args.length == 0) {
             executor.sendMessage(ChatColor.YELLOW + "Benutze /warp <location>");
         } else if (args.length == 1) {
@@ -27,5 +25,4 @@ public class WarpCommand implements CommandExecutor {
         }
         return false;
     }
-
 }

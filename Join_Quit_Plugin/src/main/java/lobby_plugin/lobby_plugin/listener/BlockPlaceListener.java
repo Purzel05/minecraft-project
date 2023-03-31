@@ -9,7 +9,6 @@ public class BlockPlaceListener implements Listener {
     public static boolean zeviCommand = true;
     @EventHandler
     public void onBlockBreak(BlockPlaceEvent event) {
-
         Player player = event.getPlayer();
         if(zeviCommand == false) {
             if (player.getName().equalsIgnoreCase("The_Maximalus")) {
