@@ -16,8 +16,10 @@ public final class Main extends JavaPlugin {
         commandRegistration();
         listenerRegistrations();
         for(Entity e : Bukkit.getWorld("world").getEntities()) {
-            ItemFrame itemFrame = (ItemFrame) e;
-            itemFrame.setFixed(true);
+            if(e instanceof ItemFrame) {
+                ItemFrame itemFrame = (ItemFrame) e;
+                itemFrame.setFixed(true);
+            }
         }
     }
     @Override
