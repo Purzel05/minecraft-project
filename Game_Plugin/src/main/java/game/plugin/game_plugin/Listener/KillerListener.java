@@ -22,11 +22,10 @@ public class KillerListener implements Listener {
         if (event.getEntity() instanceof Player) {
             Player killedPlayer = (Player) event.getEntity();
             EntityDamageEvent deathcause = killedPlayer.getLastDamageCause();
-            Player hasAxe = killedPlayer.getKiller();
 
             if(deathcause != null) {
 
-                if (deathcause.getCause() == EntityDamageEvent.DamageCause.ENTITY_ATTACK || deathcause.getCause() == EntityDamageEvent.DamageCause.PROJECTILE || hasAxe.getInventory().getItemInMainHand().getType().equals(Material.IRON_AXE)) {
+                if (deathcause.getCause() == EntityDamageEvent.DamageCause.ENTITY_ATTACK || deathcause.getCause() == EntityDamageEvent.DamageCause.PROJECTILE) {
                     EntityDamageByEntityEvent entityDamageByEntityEvent = (EntityDamageByEntityEvent) deathcause;
                     Entity killerEntity = killedPlayer.getKiller();
 
@@ -57,9 +56,13 @@ public class KillerListener implements Listener {
                                 }
                             }
                         }
+                        Bukkit.broadcastMessage("3");
                     }
+                    Bukkit.broadcastMessage("2");
                 }
+                Bukkit.broadcastMessage("1");
             }
+            Bukkit.broadcastMessage("0");
         }
     }
 }

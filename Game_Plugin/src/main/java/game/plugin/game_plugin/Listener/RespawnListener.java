@@ -1,6 +1,5 @@
 package game.plugin.game_plugin.Listener;
 
-import game.plugin.game_plugin.Commands.StartCommand;
 import game.plugin.game_plugin.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -32,15 +31,13 @@ public class RespawnListener implements Listener {
         if(event.getEntity() instanceof Player) {
             Player player = (Player) event.getEntity();
             Bukkit.getScheduler().runTaskLater(Main.getPlugin(Main.class),new Runnable() {
-                ItemStack arrows = new ItemStack(Material.ARROW, 32);
                 @Override
                 public void run() {
                     player.spigot().respawn();
                     player.teleport(respawnLocation);
                     player.getInventory().clear();
-                    player.getInventory().setItem(20,arrows);
                     player.getInventory().setItem(0, archerKit);
-                    player.getInventory().setItem(4, berserkKit);
+                    player.getInventory().setItem(1, berserkKit);
                 }
             }, 20);
         }

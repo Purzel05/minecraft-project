@@ -43,8 +43,8 @@ public class PlayerRightClickListener implements Listener {
         armorArcher[1] = new ItemStack(Material.LEATHER_LEGGINGS, 1);
         armorArcher[2] = new ItemStack(Material.LEATHER_CHESTPLATE, 1);
         armorArcher[3] = new ItemStack(Material.LEATHER_HELMET, 1);
-        ItemStack arrows = new ItemStack(Material.ARROW, 64);
         ItemStack bow = new ItemStack(Material.BOW, 1);
+        ItemStack arrows = new ItemStack(Material.ARROW, 20);
         ItemStack meeleWeapon = new ItemStack(Material.WOODEN_SWORD, 1);
 
         if (player.getItemInHand().getType() == Material.GRAY_DYE && player.getItemInHand() != null) {
@@ -58,9 +58,9 @@ public class PlayerRightClickListener implements Listener {
         if (player.getItemInHand().getType() == Material.LIME_DYE && player.getItemInHand() != null) {
             player.getInventory().clear();
             player.getInventory().setArmorContents(armorArcher);
-            player.getInventory().setItem(20, arrows);
             player.getInventory().setItem(3, food);
             player.getInventory().setItem(1, bow);
+            player.getInventory().setItem(20, arrows);
             player.getInventory().setItem(0, meeleWeapon);
             player.getInventory().setItem(2, Flint_and_Steel);
         }

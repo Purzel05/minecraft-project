@@ -1,5 +1,6 @@
 package game.plugin.game_plugin.Commands;
 
+import game.plugin.game_plugin.Main;
 import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -36,17 +37,18 @@ public class EndCommand implements CommandExecutor {
             }
 
             for (Player p : Bukkit.getOnlinePlayers()) {
-                if (p.isDead()) {
-                    p.spigot().respawn();
-                    p.teleport(spawn);
-                }
-                p.setGameMode(GameMode.SURVIVAL);
-                p.teleport(spawn);
-                p.getInventory().clear();
-                p.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
-                p.setHealth(20);
-                p.setFoodLevel(20);
-
+                Bukkit.getScheduler().runTaskLater(Main.getPlugin(Main.class), new Runnable() {
+                    @Override
+                    public void run() {
+                        p.spigot().respawn();
+                        p.teleport(spawn);
+                        p.setGameMode(GameMode.SURVIVAL);
+                        p.getInventory().clear();
+                        p.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
+                        p.setHealth(20);
+                        p.setFoodLevel(20);
+                    }
+                }, 20);
             }
         }else {
             sender.sendMessage(ChatColor.DARK_RED + "Du bist kein Operator!");
