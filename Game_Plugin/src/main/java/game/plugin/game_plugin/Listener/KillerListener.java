@@ -22,16 +22,12 @@ public class KillerListener implements Listener {
         if (event.getEntity() instanceof Player) {
             Player killedPlayer = (Player) event.getEntity();
             EntityDamageEvent deathcause = killedPlayer.getLastDamageCause();
-
             if(deathcause != null) {
-
                 if (deathcause.getCause() == EntityDamageEvent.DamageCause.ENTITY_ATTACK || deathcause.getCause() == EntityDamageEvent.DamageCause.PROJECTILE) {
                     EntityDamageByEntityEvent entityDamageByEntityEvent = (EntityDamageByEntityEvent) deathcause;
                     Entity killerEntity = killedPlayer.getKiller();
-
                     if (killerEntity instanceof Projectile) {
                         ProjectileSource projectileSender = ((Projectile) killerEntity).getShooter();
-
                         if (projectileSender instanceof Player) {
                             killerEntity = (Player) projectileSender;
                         }
@@ -39,18 +35,13 @@ public class KillerListener implements Listener {
                     if (killerEntity != null) {
                         Player killerPlayer = (Player) killerEntity;
                         killedPlayer.sendMessage("§5§l§[Du wurdest von " + killerPlayer.getName() + ("§5§l§[ und dem allmächtigem Schleggagott zerquetscht"));
-                        int arrowAmount = killerPlayer.getInventory().getItem(20).getAmount();
                         KillcounterScoreboard killerScoreboard = StartCommand.scoreboards.get(killerPlayer.getUniqueId());
                         killerScoreboard.killUpdate();
                         killerPlayer.setHealth(20);
-                        killerPlayer.getInventory().getItem(20).setAmount(arrowAmount + 5);
-
                         if (killerScoreboard.getContent() == 10) {
                             Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "end");
                             killerPlayer.sendMessage(ChatColor.GREEN + "Du hast gewonnen!");
-
                             for (Player p : Bukkit.getOnlinePlayers()) {
-
                                 if (!p.getName().equalsIgnoreCase(killerPlayer.getName())) {
                                     p.sendMessage(ChatColor.RED + killerPlayer.getName() + ChatColor.GREEN + " hat gewonnen!");
                                 }

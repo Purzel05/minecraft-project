@@ -48,7 +48,7 @@ public class EndCommand implements CommandExecutor {
                         p.setHealth(20);
                         p.setFoodLevel(20);
                     }
-                }, 20);
+                }, 40);
             }
         }else {
             sender.sendMessage(ChatColor.DARK_RED + "Du bist kein Operator!");
