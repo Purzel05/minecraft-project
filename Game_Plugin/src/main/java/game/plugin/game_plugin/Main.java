@@ -1,8 +1,6 @@
 package game.plugin.game_plugin;
 
-import game.plugin.game_plugin.Commands.BuildCommand;
-import game.plugin.game_plugin.Commands.EndCommand;
-import game.plugin.game_plugin.Commands.StartCommand;
+import game.plugin.game_plugin.Commands.*;
 import game.plugin.game_plugin.Listener.*;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Entity;
@@ -30,6 +28,8 @@ public final class Main extends JavaPlugin {
         getCommand("end").setExecutor(new EndCommand());
         getCommand("start").setExecutor(new StartCommand());
         getCommand("build").setExecutor(new BuildCommand());
+        getCommand("freeze").setExecutor(new FreezeCommand());
+        getCommand("Unfreeze").setExecutor(new UnfreezeCommand());
     }
     private void listenerRegistrations(){
         PluginManager pluginManager = Bukkit.getPluginManager();

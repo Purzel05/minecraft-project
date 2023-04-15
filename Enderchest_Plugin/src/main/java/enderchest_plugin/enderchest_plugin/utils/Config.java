@@ -5,10 +5,8 @@ import java.io.File;
 import java.io.IOException;
 
 public class Config {
-
 private static File file;
     private static YamlConfiguration configuration;
-
     public Config() {
         File dir = new File("./minecraft-project/Enderchest_Plugin/");
     if (!dir.exists()){
@@ -28,11 +26,9 @@ private static File file;
     }
     public static boolean contains(String path){
     return configuration.contains(path);
-
     }
     public static void set(String path, Object value) throws IOException {
         configuration.set(path, value);
-
     }
     public static Object get(String path){
         if(!contains(path)){
@@ -40,5 +36,4 @@ private static File file;
         }
           return configuration.get(path);
     }
-
 }

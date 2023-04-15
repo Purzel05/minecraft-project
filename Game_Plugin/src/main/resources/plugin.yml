@@ -13,3 +13,9 @@ commands:
 
   build:
     description: Aktiviert/Deaktiviert das Bauen
+
+  freeze:
+    description: Ein Spieler wird eingefroren
+
+  unfreeze:
+    description: Ein Spieler wird aufgetaut

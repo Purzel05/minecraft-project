@@ -12,7 +12,6 @@ import java.io.IOException;
 
 public class EnderchestCommand implements CommandExecutor {
     private Inventory inventory;
-
     public EnderchestCommand() {
 
         int slots = 27;
@@ -25,14 +24,9 @@ public class EnderchestCommand implements CommandExecutor {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-
         }
         this.inventory = Bukkit.createInventory(null,slots,"§6Enderchest");
-
-
-
     }
-
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args){
         if (sender instanceof Player) {
@@ -43,5 +37,4 @@ public class EnderchestCommand implements CommandExecutor {
         }
         return false;
     }
-
 }
