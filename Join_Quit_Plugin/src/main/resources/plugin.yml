@@ -10,3 +10,6 @@ commands:
 
   warp:
     description: Teleportiert zu bestimmten Warppunkt
+
+  invsee:
+    description: Zeigt das Inventar eines anderen Spielers
