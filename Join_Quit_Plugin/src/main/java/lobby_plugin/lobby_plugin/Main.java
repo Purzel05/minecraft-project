@@ -33,8 +33,10 @@ public final class Main extends JavaPlugin {
 
     public void commandRegistration() {
         getCommand("deez").setExecutor(new DeezCommand());
-        getCommand("warp").setExecutor(new WarpCommand());
         getCommand("invsee").setExecutor(new InvseeCommand());
+        getCommand("warp").setExecutor(new WarpCommand());
+        getCommand("createwarp").setExecutor(new WarpCommand());
+        getCommand("deletewarp").setExecutor(new WarpCommand());
     }
 
 }

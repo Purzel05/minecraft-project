@@ -8,8 +8,14 @@ commands:
   deez:
     description: deez nuts für Schleggamann
 
-  warp:
-    description: Teleportiert zu bestimmten Warppunkt
-
   invsee:
     description: Zeigt das Inventar eines anderen Spielers
+
+  warp:
+    description: Teleportiert dich zu einem Warppunkt
+
+  createwarp:
+    description: Erstellt einen Warppunkt
+
+  deletewarp:
+    description: Löscht einen Warppunkt
